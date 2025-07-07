@@ -1,0 +1,147 @@
+---
+title: "Einführung in deskriptive Statistik mit jamovi"
+format: html
+lang: de
+date: today
+license: "CC BY-SA"
+html-table-processing: none
+link-external-newwindow: true
+toc: true
+toc-location: body
+embed-resources: false
+theme: minty
+title-block-banner: true
+published-title: Letzte Aktualisierung
+page-layout: full
+code-link: true
+execute: 
+  warning: false
+  message: false
+author:
+  name: Pawel R. Kulawiak
+  orcid: 0000-0001-5939-4380
+  email: kulawiak.pawel@uni-koeln.de
+  url: https://pawelkulawiak.github.io/
+  affiliations:
+    name: Universität zu Köln, Graduiertenschule für Lehrer:innenbildung
+    url: https://zfl.uni-koeln.de/graduiertenschule/die-graduiertenschule-auf-einen-blick/team
+---
+
+```{=html}
+<style>
+/* Add logo to the title banner */
+#title-block-header.quarto-title-block.default .quarto-title::before {
+  content: '';
+  display: block;
+  background-image: url('https://www.jamovi.org/assets/header-logo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 20px;
+}
+</style>
+```
+
+## Der Übergang von SPSS zu jamovi
+
+:::::: {.grid}
+
+::: {.g-col-6}
+![[Ein Beitrag von Thomas Langkamp veröffentlicht am 2. Juni 2023 bei GOLEM](https://www.golem.de/news/spss-vs-freie-statistiksoftware-abschied-von-einem-klassiker-2306-174567.html)](golem_beitrag.png)
+:::
+
+::: {.g-col-6}
+![[Ein Beitrag von Frank M. LoSchiavo veröffentlicht am 18. Mai 2024 bei MEDIUM](https://medium.com/@Frank.M.LoSchiavo/jamovi-a-free-alternative-to-spss-that-provides-a-gateway-to-r-e55f7167d005)](loschiavo.png)
+:::
+
+::::::
+
+## Wer oder was ist jamovi?
+
+:::::: {.grid}
+
+::: {.g-col-5}
+> The jamovi project was founded to develop a **free** and **open** statistical platform which is **intuitive to use**, and can provide the latest developments in statistical methodology. At the core of the jamovi philosophy, is that scientific software should be **“community driven”**, where anyone can develop and publish analyses, and make them available to a wide audience.
+
+- <https://www.jamovi.org/about.html>
+- <https://www.jamovi.org/>
+
+![](unmasked.png)
+
+:::
+
+::: {.g-col-7}
+![](info.png)
+:::
+
+::::::
+
+## Wir starten jamovi
+
+**jamovi-Dokumentation**: <https://docs.jamovi.org/>
+
+**jamovi-Buch** <https://davidfoxcroft.github.io/lsj-book/>
+
+![](https://docs.jamovi.org/_images/um_screenshot.png)
+
+## Daten-Beispiel: Afrozensus
+
+**Afrozensus**: <https://afrozensus.de/about/>
+
+**Zugang zu ausgewählten Daten der Afrozensus-Befragung**: <https://data.afrozensus.de/>
+
+{{< video https://www.youtube.com/embed/w8Yo_PPwqdQ?si=0KUCmkXW_bp7Hu9Q >}}
+
+---
+
+![](images\AZ_BAR.png){width="75%"}
+
+![](images\AZ_TAB.png){width="75%"}
+
+::: callout-tip
+## Afrozensus-Daten
+
+<https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/afrozensus_data_1.xlsx>
+
+**Variable**: Rassismus_Lehrer_Dozenten
+
+- Nie	(0)
+- Selten (1)
+- Manchmal (2)
+- Oft	(3)
+- Sehr häufig (4)
+
+**Variable**: Anzahl_Afrika_Eltern (Anzahl Afrikanischer Elternteile)
+
+- 1
+- 2
+
+:::
+
+## Daten-Import und erste Analyse
+
+**Wir replizieren das Balkendiagramm und die Häufigkeitstabelle (Variable: Ich werde von Lehrer:innen/Dozierenden rassistisch beleidigt).**
+
+Ablauf:
+
+- Daten-Import
+- Erforschung/Exploration
+- Werte-Labels anlegen
+- Kreisdiagramm (Modul JJStatsPlot installieren)
+- Referenzen
+- Ergebnisse kommentieren im Text-Editor (Reiter Bearbeiten)
+- Ergebnisse löschen
+- Ergebnisse exportieren (pdf / html)
+- HTML-Ergebnisse mit Word öffnen
+- Syntax-Modus
+- Jamovi-Projekt abspeichern: jamovi File Format (.omv)
+
+## R Session Info
+
+```{r}
+library(devtools)
+session_info()
+```
+
