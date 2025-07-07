@@ -46,37 +46,32 @@ author:
 
 ## Der Übergang von SPSS zu jamovi
 
-:::::: {.grid}
-
-::: {.g-col-6}
+::::: grid
+::: g-col-6
 ![[Ein Beitrag von Thomas Langkamp veröffentlicht am 2. Juni 2023 bei GOLEM](https://www.golem.de/news/spss-vs-freie-statistiksoftware-abschied-von-einem-klassiker-2306-174567.html)](golem_beitrag.png)
 :::
 
-::: {.g-col-6}
+::: g-col-6
 ![[Ein Beitrag von Frank M. LoSchiavo veröffentlicht am 18. Mai 2024 bei MEDIUM](https://medium.com/@Frank.M.LoSchiavo/jamovi-a-free-alternative-to-spss-that-provides-a-gateway-to-r-e55f7167d005)](loschiavo.png)
 :::
-
-::::::
+:::::
 
 ## Wer oder was ist jamovi?
 
-:::::: {.grid}
-
-::: {.g-col-5}
+::::: grid
+::: g-col-5
 > The jamovi project was founded to develop a **free** and **open** statistical platform which is **intuitive to use**, and can provide the latest developments in statistical methodology. At the core of the jamovi philosophy, is that scientific software should be **“community driven”**, where anyone can develop and publish analyses, and make them available to a wide audience.
 
-- <https://www.jamovi.org/about.html>
-- <https://www.jamovi.org/>
+-   <https://www.jamovi.org/about.html>
+-   <https://www.jamovi.org/>
 
 ![](unmasked.png)
-
 :::
 
-::: {.g-col-7}
+::: g-col-7
 ![](info.png)
 :::
-
-::::::
+:::::
 
 ## Wir starten jamovi
 
@@ -94,7 +89,7 @@ author:
 
 {{< video https://www.youtube.com/embed/w8Yo_PPwqdQ?si=0KUCmkXW_bp7Hu9Q >}}
 
----
+------------------------------------------------------------------------
 
 ![](images\AZ_BAR.png){width="75%"}
 
@@ -107,17 +102,16 @@ author:
 
 **Variable**: Rassismus_Lehrer_Dozenten
 
-- Nie	(0)
-- Selten (1)
-- Manchmal (2)
-- Oft	(3)
-- Sehr häufig (4)
+-   Nie (0)
+-   Selten (1)
+-   Manchmal (2)
+-   Oft (3)
+-   Sehr häufig (4)
 
 **Variable**: Anzahl_Afrika_Eltern (Anzahl Afrikanischer Elternteile)
 
-- 1
-- 2
-
+-   1
+-   2
 :::
 
 ## Daten-Import und erste Analyse
@@ -126,17 +120,106 @@ author:
 
 Ablauf:
 
-- Daten-Import
-- Erforschung/Exploration
-- Werte-Labels anlegen
-- Kreisdiagramm (Modul JJStatsPlot installieren)
-- Referenzen
-- Ergebnisse kommentieren im Text-Editor (Reiter Bearbeiten)
-- Ergebnisse löschen
-- Ergebnisse exportieren (pdf / html)
-- HTML-Ergebnisse mit Word öffnen
-- Syntax-Modus
-- Jamovi-Projekt abspeichern: jamovi File Format (.omv)
+-   Daten-Import
+-   Erforschung/Exploration
+-   Werte-Labels anlegen
+-   Kreisdiagramm (Modul JJStatsPlot installieren)
+-   Referenzen
+-   Ergebnisse kommentieren im Text-Editor (Reiter Bearbeiten)
+-   Ergebnisse löschen
+-   Ergebnisse exportieren (pdf / html)
+-   HTML-Ergebnisse mit Word öffnen
+-   Syntax-Modus
+-   Jamovi-Projekt abspeichern: jamovi File Format (.omv)
+
+## Wir verfeinern die Analysen mit R
+
+Modul Rj Editor für jamovi: <https://docs.jamovi.org/_pages/Rj_overview.html>
+
+![](https://docs.jamovi.org/_images/sj_jamovi_Rj1.png)
+
+**Pawel**: I am using R inside jamovi. My data is "data". Make a bar plot of Rassismus_Lehrer_Dozenten with the percentage on top of each bar, using ggplot2.
+
+**LLM**: I'll help you create a ggplot2 bar plot with percentages on top of each bar in jamovi's R editor:
+
+```{r, eval = F}
+# Load ggplot2 library
+library(ggplot2)
+
+# Create a data frame with counts and percentages
+plot_data <- data %>%
+  count(Rassismus_Lehrer_Dozenten) %>%
+  mutate(percentage = round(n / sum(n) * 100, 1))
+
+# Create ggplot2 bar plot
+ggplot(plot_data, aes(x = factor(Rassismus_Lehrer_Dozenten), y = n)) +
+  geom_bar(stat = "identity", fill = "lightblue", color = "black") +
+  geom_text(aes(label = paste0(percentage, "%")), 
+            vjust = -0.5, 
+            size = 3.5) +
+  labs(title = "Rassismus Lehrer/Dozenten",
+       x = "Categories",
+       y = "Frequency") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+This ggplot2 code will:
+
+1.  **Load the ggplot2 library** (make sure it's available in your jamovi environment)
+2.  **Create a summary data frame** with counts and percentages using `count()` and `mutate()`
+3.  **Create a bar plot** using `geom_bar()` with light blue fill
+4.  **Add percentage labels** on top of bars using `geom_text()`
+5.  **Apply clean formatting** with `theme_minimal()` and rotated x-axis labels
+
+Key features:
+
+-   `vjust = -0.5` positions the percentage labels above the bars
+-   `factor()` ensures proper ordering of categories
+-   `angle = 45, hjust = 1` rotates x-axis labels for better readability
+-   The percentages are calculated and displayed with one decimal place
+
+If you need to customize it further, you can:
+
+-   Change `fill = "lightblue"` to any color you prefer
+-   Adjust `size = 3.5` to make the percentage text larger or smaller
+-   Modify the `vjust` value to position labels higher or lower
+-   Change the theme (e.g., `theme_classic()`, `theme_bw()`)
+
+Paste this code into your jamovi R editor and run it to create your ggplot2 bar chart with percentages!
+
+**Pawel**: Check my error message:
+
+![](images/error.png)
+
+**LLM**: You're getting an error message that says "could not find function '%\>%'" which is a common issue when working with the pipe operator in R. The pipe operator `%>%` is part of the `magrittr` package, which is automatically loaded when you load the `dplyr` package or the entire `tidyverse`. To fix this error, you need to load the appropriate package at the beginning of your script:
+
+```{r, eval = F}
+# Load ggplot2 and tidyverse library
+library(ggplot2)
+library(tidyverse)
+
+# Create a data frame with counts and percentages
+plot_data <- data %>%
+  count(Rassismus_Lehrer_Dozenten) %>%
+  mutate(percentage = round(n / sum(n) * 100, 1))
+
+# Create ggplot2 bar plot
+ggplot(plot_data, aes(x = factor(Rassismus_Lehrer_Dozenten), y = n)) +
+  geom_bar(stat = "identity", fill = "lightblue", color = "black") +
+  geom_text(aes(label = paste0(percentage, "%")), 
+            vjust = -0.5, 
+            size = 3.5) +
+  labs(title = "Rassismus Lehrer/Dozenten",
+       x = "Categories",
+       y = "Frequency") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+**Pawel**: Nice!
+
+![](images/ggplotbar.png)
 
 ## R Session Info
 
@@ -144,4 +227,3 @@ Ablauf:
 library(devtools)
 session_info()
 ```
-
