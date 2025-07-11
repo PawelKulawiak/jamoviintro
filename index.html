@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.6.42">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Pawel R. Kulawiak">
-<title>Einführung in deskriptive Statistik mit jamovi</title>
+<title>Einführung in statistische Verfahren mit jamovi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,7 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page">
-      <h1 class="title">Einführung in deskriptive Statistik mit jamovi</h1>
+      <h1 class="title">Einführung in statistische Verfahren mit jamovi</h1>
                       </div>
   </div>
     
@@ -95,7 +95,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Letzte Aktualisierung</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">7. Juli 2025</p>
+        <p class="date">11. Juli 2025</p>
       </div>
     </div>
     
@@ -115,6 +115,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#daten-beispiel-afrozensus" id="toc-daten-beispiel-afrozensus">Daten-Beispiel: Afrozensus</a></li>
   <li><a href="#daten-import-und-erste-analyse" id="toc-daten-import-und-erste-analyse">Daten-Import und erste Analyse</a></li>
   <li><a href="#wir-verfeinern-die-analysen-mit-r" id="toc-wir-verfeinern-die-analysen-mit-r">Wir verfeinern die Analysen mit R</a></li>
+  <li><a href="#inferenzstatistik-klassischer-hypothesentest-binomialtest" id="toc-inferenzstatistik-klassischer-hypothesentest-binomialtest">Inferenzstatistik: Klassischer Hypothesentest (Binomialtest)</a></li>
+  <li><a href="#bivariate-statistik-kategoriale-daten-und-kontingenztabellen-chi-quadrat-test" id="toc-bivariate-statistik-kategoriale-daten-und-kontingenztabellen-chi-quadrat-test">Bivariate Statistik: Kategoriale Daten und Kontingenztabellen (Chi-Quadrat-Test)</a></li>
+  <li><a href="#next" id="toc-next">Next</a></li>
   <li><a href="#r-session-info" id="toc-r-session-info">R Session Info</a></li>
   </ul></nav><style>
 /* Add logo to the title banner */
@@ -134,13 +137,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="grid">
 <div class="g-col-6">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="golem_beitrag.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="images/golem_beitrag.png" class="img-fluid figure-img"></p>
 <figcaption><a href="https://www.golem.de/news/spss-vs-freie-statistiksoftware-abschied-von-einem-klassiker-2306-174567.html">Ein Beitrag von Thomas Langkamp veröffentlicht am 2. Juni 2023 bei GOLEM</a></figcaption></figure>
 </div>
 </div>
 <div class="g-col-6">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="loschiavo.png" class="img-fluid figure-img"></p>
+<figure class="figure"><p><img src="images/loschiavo.png" class="img-fluid figure-img"></p>
 <figcaption><a href="https://medium.com/@Frank.M.LoSchiavo/jamovi-a-free-alternative-to-spss-that-provides-a-gateway-to-r-e55f7167d005">Ein Beitrag von Frank M. LoSchiavo veröffentlicht am 18. Mai 2024 bei MEDIUM</a></figcaption></figure>
 </div>
 </div>
@@ -148,6 +151,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section><section id="wer-oder-was-ist-jamovi" class="level2"><h2 class="anchored" data-anchor-id="wer-oder-was-ist-jamovi">Wer oder was ist jamovi?</h2>
 <div class="grid">
 <div class="g-col-5">
+<p><img src="images/unmasked.png" class="img-fluid"></p>
+</div>
+<div class="g-col-7">
+<p><img src="images/info.png" class="img-fluid"></p>
 <blockquote class="blockquote">
 <p>The jamovi project was founded to develop a <strong>free</strong> and <strong>open</strong> statistical platform which is <strong>intuitive to use</strong>, and can provide the latest developments in statistical methodology. At the core of the jamovi philosophy, is that scientific software should be <strong>“community driven”</strong>, where anyone can develop and publish analyses, and make them available to a wide audience.</p>
 </blockquote>
@@ -155,15 +162,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://www.jamovi.org/about.html" class="uri">https://www.jamovi.org/about.html</a></li>
 <li><a href="https://www.jamovi.org/" class="uri">https://www.jamovi.org/</a></li>
 </ul>
-<p><img src="unmasked.png" class="img-fluid"></p>
-</div>
-<div class="g-col-7">
-<p><img src="info.png" class="img-fluid"></p>
 </div>
 </div>
 </section><section id="wir-starten-jamovi" class="level2"><h2 class="anchored" data-anchor-id="wir-starten-jamovi">Wir starten jamovi</h2>
 <p><strong>jamovi-Dokumentation</strong>: <a href="https://docs.jamovi.org/" class="uri">https://docs.jamovi.org/</a></p>
-<p><strong>jamovi-Buch</strong> <a href="https://davidfoxcroft.github.io/lsj-book/" class="uri">https://davidfoxcroft.github.io/lsj-book/</a></p>
+<p><strong>jamovi-Buch</strong>: <a href="https://davidfoxcroft.github.io/lsj-book/" class="uri">https://davidfoxcroft.github.io/lsj-book/</a></p>
+<p>Navarro, D., &amp; Foxcroft, D. (2025). Learning Statistics with jamovi. Open Book Publishers. <a href="https://doi.org/10.11647/obp.0333" class="uri">https://doi.org/10.11647/obp.0333</a></p>
 <p><img src="https://docs.jamovi.org/_images/um_screenshot.png" class="img-fluid"></p>
 </section><section id="daten-beispiel-afrozensus" class="level2"><h2 class="anchored" data-anchor-id="daten-beispiel-afrozensus">Daten-Beispiel: Afrozensus</h2>
 <p><strong>Afrozensus</strong>: <a href="https://afrozensus.de/about/" class="uri">https://afrozensus.de/about/</a></p>
@@ -182,7 +186,7 @@ Afrozensus-Daten
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><a href="https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/afrozensus_data_1.xlsx" class="uri">https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/afrozensus_data_1.xlsx</a></p>
+<p><strong>Daten</strong>: <a href="https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/afrozensus_data_1.xlsx" class="uri">https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/afrozensus_data_1.xlsx</a></p>
 <p><strong>Variable</strong>: Rassismus_Lehrer_Dozenten</p>
 <ul>
 <li>Nie (0)</li>
@@ -205,16 +209,17 @@ Afrozensus-Daten
 <li>Daten-Import</li>
 <li>Erforschung/Exploration</li>
 <li>Werte-Labels anlegen</li>
+<li>Farbpalette/Farbschema anpassen</li>
+<li>Syntax-Modus</li>
 <li>Kreisdiagramm (Modul JJStatsPlot installieren)</li>
 <li>Referenzen</li>
 <li>Ergebnisse kommentieren im Text-Editor (Reiter Bearbeiten)</li>
 <li>Ergebnisse löschen</li>
-<li>Ergebnisse exportieren (pdf / html)</li>
+<li>Ergebnisse exportieren (pdf/html/PNG)</li>
 <li>HTML-Ergebnisse mit Word öffnen</li>
-<li>Syntax-Modus</li>
 <li>Jamovi-Projekt abspeichern: jamovi File Format (.omv)</li>
 </ul></section><section id="wir-verfeinern-die-analysen-mit-r" class="level2"><h2 class="anchored" data-anchor-id="wir-verfeinern-die-analysen-mit-r">Wir verfeinern die Analysen mit R</h2>
-<p>Modul Rj Editor für jamovi: <a href="https://docs.jamovi.org/_pages/Rj_overview.html" class="uri">https://docs.jamovi.org/_pages/Rj_overview.html</a></p>
+<p><strong>Modul Rj Editor</strong> für jamovi: <a href="https://docs.jamovi.org/_pages/Rj_overview.html" class="uri">https://docs.jamovi.org/_pages/Rj_overview.html</a></p>
 <p><img src="https://docs.jamovi.org/_images/sj_jamovi_Rj1.png" class="img-fluid"></p>
 <p><strong>Pawel</strong>: I am using R inside jamovi. My data is “data”. Make a bar plot of Rassismus_Lehrer_Dozenten with the percentage on top of each bar, using ggplot2.</p>
 <p><strong>LLM</strong>: I’ll help you create a ggplot2 bar plot with percentages on top of each bar in jamovi’s R editor:</p>
@@ -299,6 +304,1217 @@ Afrozensus-Daten
 </div>
 <p><strong>Pawel</strong>: Nice!</p>
 <p><img src="images/ggplotbar.png" class="img-fluid"></p>
+</section><section id="inferenzstatistik-klassischer-hypothesentest-binomialtest" class="level2"><h2 class="anchored" data-anchor-id="inferenzstatistik-klassischer-hypothesentest-binomialtest">Inferenzstatistik: Klassischer Hypothesentest (Binomialtest)</h2>
+<ul>
+<li>
+<strong>Buch-Kapitel</strong>: <a href="https://davidfoxcroft.github.io/lsj-book/09-Hypothesis-testing.html" class="uri">https://davidfoxcroft.github.io/lsj-book/09-Hypothesis-testing.html</a>
+</li>
+<li>
+<strong>Tutorial</strong>: <a href="https://datatab.de/tutorial/binomial-test" class="uri">https://datatab.de/tutorial/binomial-test</a>
+</li>
+</ul>
+<p><strong>Fiktives Beispiel</strong>: In einer Zeitung wird behauptet, dass bei der Hälfte der Menschen afrikanischer Herkunft ein Elternteil nicht afrikanischer Herkunft sei.</p>
+<p>Intuitiv gehen Sie davon aus, dass der Anteil deutlich höher sein müsste (als in der Zeitung behauptet wird). Damit haben wir unsere <strong>Forschungshypothese</strong>, die sogenannte <strong>Alternativhypothese</strong>, formuliert:</p>
+<ul>
+<li>Der Anteil der Menschen afrikanischer Herkunft, die einen Elternteil nicht afrikanischer Herkunft haben, liegt über 50%.(Anteil &gt; 50%)</li>
+</ul>
+<p>Dem gegenüber steht die Behauptung aus der Zeitung, die sogenannte <strong>Nullhypothese</strong>:</p>
+<ul>
+<li>Der Anteil der Menschen afrikanischer Herkunft, die einen Elternteil nicht afrikanischer Herkunft haben, liegt bei 50%. (Anteil = 50%)</li>
+</ul>
+<p><strong>Vorgehen</strong>:</p>
+<ul>
+<li>Visualisieren (Balkendiagramm/Kreisdiagramm)</li>
+<li>Binomialtest durchführen</li>
+</ul>
+<div class="grid">
+<div class="g-col-5">
+<p><img src="images/eltern.png" class="img-fluid"></p>
+</div>
+<div class="g-col-6">
+<p><img src="images/eltern_kreis.png" class="img-fluid"></p>
+</div>
+</div>
+
+    
+        <meta charset="utf-8">
+<meta name="generator" content="jamovi 2.6.26.0">
+<title>Results</title>
+<style>
+
+    table {
+        border-spacing: 0 ;
+        page-break-inside: avoid;
+    }
+
+    table tr td, table tr th {
+        page-break-inside: avoid;
+        font-size: 12px ;
+    }
+
+    .ql-align-center {
+        text-align: center;
+    }
+
+    .ql-align-right {
+        text-align: right;
+    }
+
+    .ql-align-justify {
+        text-align: justify;
+    }
+
+    .ql-indent-1 {
+        padding-left: 3em;
+    }
+
+    .ql-indent-2 {
+        padding-left: 6em;
+    }
+
+    .ql-indent-3 {
+        padding-left: 9em;
+    }
+
+    .ql-indent-4 {
+        padding-left: 12em;
+    }
+
+    .ql-indent-5 {
+        padding-left: 15em;
+    }
+
+    .note {
+        margin: 5px 0px;
+    }
+        </style>
+<table aria-labelledby="3" tabindex="0">
+<thead><tr><th scope="colgroup" colspan="6" style="text-align:left;padding:4px 8px 4px 0px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:baseline;caption-side:top;"><span id="3" style="font-weight:400;">Binomialtest</span></th></tr></thead>
+<thead><tr>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">&nbsp;</th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">Stufe</th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">Anzahl</th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">Insgesamt</th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">Anteil</th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">p</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="rowgroup" rowspan="2" style="text-align:left;padding:8px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:top;">Anzahl_Afrika_Eltern<span style="font-weight:400;"></span>
+</th>
+<th scope="row" style="text-align:left;padding:8px 8px 4px 8px;border:0px;vertical-align:top;">1<span style="font-weight:400;"></span>
+</th>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">900<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">1313<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">0.685<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">&lt;.001<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<th scope="row" style="text-align:left;padding:4px 8px 8px 8px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:top;">2<span style="font-weight:400;"></span>
+</th>
+<td style="text-align:right;padding:2px 20px 8px 8px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:top;">413<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 8px 8px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:top;">1313<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 8px 8px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:top;">0.315<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 8px 8px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:top;">1.000<span style="font-weight:400;"></span>
+</td>
+</tr>
+</tbody>
+<tfoot><tr><td colspan="6" style="padding:6px 8px 2px 8px;border:0px;vertical-align:middle;">
+<span style="font-style: italic ;">Anmerkung.</span> Hₐ ist ein Anteil &gt; 0.5</td></tr></tfoot>
+</table>
+<p>&nbsp;</p>
+
+
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Visualisierung (Binomialtest)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><a href="https://shiny.rit.albany.edu/stat/binomial/" class="uri">https://shiny.rit.albany.edu/stat/binomial/</a></li>
+</ul>
+<p><img src="images/binomial.png" class="img-fluid"></p>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="https://davidfoxcroft.github.io/lsj-book/09-Hypothesis-testing_files/figure-html/fig-fig9-3-1.png" class="img-fluid figure-img"></p>
+<figcaption>The critical region for a one-sided test (Navarro, D., &amp; Foxcroft, D., 2025)</figcaption></figure>
+</div>
+<hr>
+<blockquote class="blockquote">
+<p>Wasserstein &amp; Lazar, 2016: <strong>Informally</strong>, a p-value is the probability under a specified statistical model that a statistical summary of the data […] would be equal to or more extreme than its observed value. […] The smaller the p-value, the greater the statistical incompatibility of the data with the null hypothesis, if the underlying assumptions used to calculate the p-value hold.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Wasserstein, R. L., &amp; Lazar, N. A. (2016). The ASA Statement on p-Values: Context, Process, and Purpose. The American Statistician, 70(2), 129–133. <a href="https://doi.org/10.1080/00031305.2016.1154108" class="uri">https://doi.org/10.1080/00031305.2016.1154108</a></p>
+</blockquote>
+<hr>
+<p>Die Wahrscheinlichkeit das Stichprobenergebnis <strong>(58%)</strong> oder ein noch extremeres Stichprobenergebnis <strong>(&gt;58%)</strong> zu beobachten, unter der Annahme, dass in der Grundgesamtheit (Population) die Annahme der <strong>Nullhypothese (50%)</strong> gilt, beträgt <strong>6.6% (<em>p</em> = 0.0666)</strong>. <em>Diese Aussage gilt unter der Bedingung, dass die Stichprobenziehung unendlich oft wiederholt worden ist</em>.</p>
+<p>Navarro, D., &amp; Foxcroft, D. (2025):</p>
+<blockquote class="blockquote">
+<p>Unfortunately, there is a third explanation that people sometimes give, especially when they’re first learning statistics, and it is <em>absolutely and completely wrong</em>. This mistaken approach is to refer to the <em>p</em>-value as “the probability that the null hypothesis is true”. It’s an intuitively appealing way to think, but it’s wrong in two key respects. First, null hypothesis testing is a frequentist tool and the frequentist approach to probability does not allow you to assign probabilities to the null hypothesis. According to this view of probability, the null hypothesis is either true or it is not, it cannot have a “5% chance” of being true.</p>
+</blockquote>
+<hr>
+<p>Wasserstein, R. L., Schirm, A. L., &amp; Lazar, N. A. (2019). Moving to a World Beyond “p  &lt; 0.05.” The American Statistician, 73(sup1), 1–19. <a href="https://doi.org/10.1080/00031305.2019.1583913" class="uri">https://doi.org/10.1080/00031305.2019.1583913</a></p>
+<ul>
+<li>Wasserstein, R. L., Schirm, A. L., &amp; Lazar, N. A. (2019):</li>
+<li>Don’t base your conclusions solely on whether an association or effect was found to be “statistically significant” (i.e., the p-value passed some arbitrary threshold such as p &lt; 0.05).</li>
+<li>Don’t believe that an association or effect exists just because it was statistically significant.</li>
+<li>Don’t believe that an association or effect is absent just because it was not statistically significant.</li>
+<li>Don’t believe that your p-value gives the probability that chance alone produced the observed association or effect or the probability that your test hypothesis is true.</li>
+<li>Don’t conclude anything about scientific or practical importance based on statistical significance (or lack thereof).</li>
+</ul>
+<hr>
+<p><strong>Don’t Say “Statistically Significant”</strong> (Wasserstein, R. L., Schirm, A. L., &amp; Lazar, N. A., 2019)</p>
+<blockquote class="blockquote">
+<p>The ASA Statement on P-Values and Statistical Significance stopped just short of recommending that declarations of “statistical significance” be abandoned. We take that step here. We conclude, based on our review of the articles in this special issue and the broader literature, that it is time to stop using the term “statistically significant” entirely. Nor should variants such as “significantly different,” “p &lt; 0.05,” and “nonsignificant” survive, whether expressed in words, by asterisks in a table, or in some other way.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Regardless of whether it was ever useful, a declaration of “statistical significance” has today become meaningless. Made broadly known by Fisher’s use of the phrase (1925), Edgeworth’s (1885) original intention for statistical significance was simply as a tool to indicate when a result warrants further scrutiny. But that idea has been irretrievably lost. Statistical significance was never meant to imply scientific importance, and the confusion of the two was decried soon after its widespread use (Boring 1919). Yet a full century later the confusion persists.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>And so the tool has become the tyrant. The problem is not simply use of the word “significant,” although the statistical and ordinary language meanings of the word are indeed now hopelessly confused (Ghose 2013); the term should be avoided for that reason alone. The problem is a larger one, however: using bright-line rules for justifying scientific claims or conclusions can lead to erroneous beliefs and poor decision making (ASA statement, Principle 3). A label of statistical significance adds nothing to what is already conveyed by the value of p; in fact, this dichotomization of p-values makes matters worse.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>For example, no p-value can reveal the plausibility, presence, truth, or importance of an association or effect. Therefore, a label of statistical significance does not mean or imply that an association or effect is highly probable, real, true, or important. Nor does a label of statistical nonsignificance lead to the association or effect being improbable, absent, false, or unimportant. Yet the dichotomization into “significant” and “not significant” is taken as an imprimatur of authority on these characteristics. In a world without bright lines, on the other hand, it becomes untenable to assert dramatic differences in interpretation from inconsequential differences in estimates. As Gelman and Stern (2006) famously observed, the difference between “significant” and “not significant” is not itself statistically significant.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Furthermore, this false split into “worthy” and “unworthy” results leads to the selective reporting and publishing of results based on their statistical significance—the so-called “file drawer problem” (Rosenthal 1979). And the dichotomized reporting problem extends beyond just publication, notes Amrhein, Trafimow, and Greenland (2019): when authors use p-value thresholds to select which findings to discuss in their papers, “their conclusions and what is reported in subsequent news and reviews will be biased…Such selective attention based on study outcomes will therefore not only distort the literature but will slant published descriptions of study results—biasing the summary descriptions reported to practicing professionals and the general public.” For the integrity of scientific publishing and research dissemination, therefore, whether a p-value passes any arbitrary threshold should not be considered at all when deciding which results to present or highlight.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>To be clear, the problem is not that of having only two labels. Results should not be trichotomized, or indeed categorized into any number of groups, based on arbitrary p-value thresholds. Similarly, we need to stop using confidence intervals as another means of dichotomizing (based, on whether a null value falls within the interval). And, to preclude a reappearance of this problem elsewhere, we must not begin arbitrarily categorizing other statistical measures (such as Bayes factors).</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Despite the limitations of p-values (as noted in Principles 5 and 6 of the ASA statement), however, we are not recommending that the calculation and use of continuous p-values be discontinued. <strong>Where p-values are used, they should be reported as continuous quantities (e.g., p = 0.08). They should also be described in language stating what the value means in the scientific context. We believe that a reasonable prerequisite for reporting any p-value is the ability to interpret it appropriately.</strong> We say more about this in Section 3.3.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>To move forward to a world beyond “p &lt; 0.05,” we must recognize afresh that <strong>statistical inference is not—and never has been—equivalent to scientific inference</strong> (Hubbard, Haig, and Parsa 2019; Ziliak 2019). However, looking to statistical significance for a marker of scientific observations’ credibility has created a guise of equivalency. <strong>Moving beyond “statistical significance” opens researchers to the real significance of statistics, which is “the science of learning from data, and of measuring, controlling, and communicating uncertainty”</strong> (Davidian and Louis 2012).</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>In sum, “statistically significant”—don’t say it and don’t use it.</strong></p>
+</blockquote>
+<hr>
+<p>Sauer, S. (2019). Moderne Datenanalyse mit R. In FOM-Edition. Springer Fachmedien Wiesbaden. <a href="https://doi.org/10.1007/978-3-658-21587-3" class="uri">https://doi.org/10.1007/978-3-658-21587-3</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/veraltet.png" class="img-fluid figure-img"></p>
+<figcaption>Vorwort von “Moderne Datenanalyse mit R” (Sauer, 2019)</figcaption></figure>
+</div>
+<hr>
+<p>Goodman, S. (2008). A Dirty Dozen: Twelve P-Value Misconceptions. Seminars in Hematology, 45(3), 135–140. <a href="https://doi.org/10.1053/j.seminhematol.2008.04.003" class="uri">https://doi.org/10.1053/j.seminhematol.2008.04.003</a></p>
+<blockquote class="blockquote">
+<p>The P value is a measure of statistical evidence that appears in virtually all medical research papers. Its interpretation is made extraordinarily difficult because it is not part of any formal system of statistical inference. As a result, <strong>the P value’s inferential meaning is widely and often wildly misconstrued</strong>, a fact that has been pointed out in innumerable papers and books appearing since at least the 1940s. This commentary reviews a dozen of these common misinterpretations and explains why each is wrong. It also reviews the possible consequences of these improper understandings or representations of its meaning. Finally, it contrasts the P value with its Bayesian counterpart, the Bayes’ factor, which has virtually all of the desirable properties of an evidential measure that the P value lacks, most notably interpretability. The most serious consequence of this array of P-value misconceptions is the false belief that the probability of a conclusion being in error can be calculated from the data in a single experiment without reference to external evidence or the plausibility of the underlying mechanism.</p>
+</blockquote>
+</div>
+</div>
+</section><section id="bivariate-statistik-kategoriale-daten-und-kontingenztabellen-chi-quadrat-test" class="level2"><h2 class="anchored" data-anchor-id="bivariate-statistik-kategoriale-daten-und-kontingenztabellen-chi-quadrat-test">Bivariate Statistik: Kategoriale Daten und Kontingenztabellen (Chi-Quadrat-Test)</h2>
+<ul>
+<li>
+<strong>Buch-Kapitel</strong>: <a href="https://davidfoxcroft.github.io/lsj-book/10-Categorical-data-analysis.html" class="uri">https://davidfoxcroft.github.io/lsj-book/10-Categorical-data-analysis.html</a>
+</li>
+<li>
+<strong>Tutorial</strong>: <a href="https://datatab.de/tutorial/kreuztabelle" class="uri">https://datatab.de/tutorial/kreuztabelle</a>
+</li>
+<li>
+<strong>Tutorial</strong>: <a href="https://datatab.de/tutorial/chi-quadrat" class="uri">https://datatab.de/tutorial/chi-quadrat</a>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<strong>Fragestellung</strong>: Gibt es einen Zusammenhang zwischen Diskriminierungserfahrung und Anzahl afrikanischer Elternteile?</li>
+<li>
+<strong>Nullhypothese</strong>: Es gibt keinen Zusammenhang zwischen Diskriminierungserfahrung und Anzahl afrikanischer Elternteile.</li>
+<li>
+<strong>Alternativhypothese</strong>: Es gibt einen Zusammenhang zwischen Diskriminierungserfahrung und Anzahl afrikanischer Elternteile.</li>
+</ul>
+<div class="grid">
+<div class="g-col-5">
+
+    
+        <meta charset="utf-8">
+<meta name="generator" content="jamovi 2.6.26.0">
+<title>Results</title>
+<style>
+    table {
+        border-spacing: 0 ;
+        page-break-inside: avoid;
+    }
+
+    table tr td, table tr th {
+        page-break-inside: avoid;
+        font-size: 12px ;
+    }
+
+    .ql-align-center {
+        text-align: center;
+    }
+
+    .ql-align-right {
+        text-align: right;
+    }
+
+    .ql-align-justify {
+        text-align: justify;
+    }
+
+    .ql-indent-1 {
+        padding-left: 3em;
+    }
+
+    .ql-indent-2 {
+        padding-left: 6em;
+    }
+
+    .ql-indent-3 {
+        padding-left: 9em;
+    }
+
+    .ql-indent-4 {
+        padding-left: 12em;
+    }
+
+    .ql-indent-5 {
+        padding-left: 15em;
+    }
+
+    .note {
+        margin: 5px 0px;
+    }
+        </style>
+<table aria-labelledby="3" tabindex="0">
+<thead><tr><th scope="colgroup" colspan="5" style="text-align:left;padding:4px 8px 4px 0px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:baseline;caption-side:top;"><span id="3" style="font-weight:400;">Kreuztabellen</span></th></tr></thead>
+<thead>
+<tr>
+<th scope="colgroup" colspan="2" style="text-align:center;padding:4px 8px 4px 8px;border:0px;vertical-align:middle;"></th>
+<th scope="colgroup" colspan="2" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">Anzahl_Afrika_Eltern</th>
+<th scope="colgroup" colspan="1" style="text-align:center;padding:4px 8px 4px 8px;border:0px;vertical-align:middle;"></th>
+</tr>
+<tr>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">Rassismus_Lehrer_Dozenten</th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;"> </th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">1</th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">2</th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">Insgesamt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Nie<span style="font-weight:400;"></span>
+</td>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Beobachtet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">416<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">188<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">604<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">% der Spalte<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">46.2%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">45.5%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">46.0%<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Selten<span style="font-weight:400;"></span>
+</td>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Beobachtet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">271<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">125<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">396<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">% der Spalte<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">30.1%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">30.3%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">30.2%<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Manchmal<span style="font-weight:400;"></span>
+</td>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Beobachtet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">151<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">70<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">221<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">% der Spalte<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">16.8%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">16.9%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">16.8%<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Oft<span style="font-weight:400;"></span>
+</td>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Beobachtet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">37<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">20<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">57<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">% der Spalte<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">4.1%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">4.8%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">4.3%<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Sehr Häufig<span style="font-weight:400;"></span>
+</td>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Beobachtet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">25<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">10<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">35<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">% der Spalte<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">2.8%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">2.4%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">2.7%<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Insgesamt<span style="font-weight:400;"></span>
+</td>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Beobachtet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">900<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">413<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">1313<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 8px 1px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 8px 8px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:top;">% der Spalte<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 8px 8px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:top;">100.0%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 8px 8px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:top;">100.0%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 8px 8px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:top;">100.0%<span style="font-weight:400;"></span>
+</td>
+</tr>
+</tbody>
+<tfoot></tfoot>
+</table>
+<p>&nbsp;</p>
+
+
+
+
+    
+        <meta charset="utf-8">
+<meta name="generator" content="jamovi 2.6.26.0">
+<title>Results</title>
+<style>
+    table {
+        border-spacing: 0 ;
+        page-break-inside: avoid;
+    }
+
+    table tr td, table tr th {
+        page-break-inside: avoid;
+        font-size: 12px ;
+    }
+
+    .ql-align-center {
+        text-align: center;
+    }
+
+    .ql-align-right {
+        text-align: right;
+    }
+
+    .ql-align-justify {
+        text-align: justify;
+    }
+
+    .ql-indent-1 {
+        padding-left: 3em;
+    }
+
+    .ql-indent-2 {
+        padding-left: 6em;
+    }
+
+    .ql-indent-3 {
+        padding-left: 9em;
+    }
+
+    .ql-indent-4 {
+        padding-left: 12em;
+    }
+
+    .ql-indent-5 {
+        padding-left: 15em;
+    }
+
+    .note {
+        margin: 5px 0px;
+    }
+        </style>
+<table aria-labelledby="3" tabindex="0">
+<thead><tr><th scope="colgroup" colspan="5" style="text-align:left;padding:4px 8px 4px 0px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:baseline;caption-side:top;"><span id="3" style="font-weight:400;">Kreuztabellen</span></th></tr></thead>
+<thead>
+<tr>
+<th scope="colgroup" colspan="2" style="text-align:center;padding:4px 8px 4px 8px;border:0px;vertical-align:middle;"></th>
+<th scope="colgroup" colspan="2" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">Anzahl_Afrika_Eltern</th>
+<th scope="colgroup" colspan="1" style="text-align:center;padding:4px 8px 4px 8px;border:0px;vertical-align:middle;"></th>
+</tr>
+<tr>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">Rassismus_Lehrer_Dozenten</th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;"> </th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">1</th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">2</th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">Insgesamt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Nie<span style="font-weight:400;"></span>
+</td>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Beobachtet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">416<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">188<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">604<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">Erwartet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">414.0<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">190.0<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">604.0<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">% der Spalte<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">46.2%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">45.5%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">46.0%<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Selten<span style="font-weight:400;"></span>
+</td>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Beobachtet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">271<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">125<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">396<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">Erwartet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">271.4<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">124.6<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">396.0<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">% der Spalte<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">30.1%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">30.3%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">30.2%<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Manchmal<span style="font-weight:400;"></span>
+</td>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Beobachtet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">151<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">70<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">221<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">Erwartet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">151.5<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">69.5<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">221.0<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">% der Spalte<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">16.8%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">16.9%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">16.8%<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Oft<span style="font-weight:400;"></span>
+</td>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Beobachtet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">37<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">20<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">57<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">Erwartet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">39.1<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">17.9<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">57.0<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">% der Spalte<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">4.1%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">4.8%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">4.3%<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Sehr Häufig<span style="font-weight:400;"></span>
+</td>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Beobachtet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">25<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">10<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">35<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">Erwartet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">24.0<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">11.0<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">35.0<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">% der Spalte<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">2.8%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">2.4%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">2.7%<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Insgesamt<span style="font-weight:400;"></span>
+</td>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Beobachtet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">900<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">413<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">1313<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">Erwartet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">900<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">413<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">1313<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 8px 1px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 8px 8px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:top;">% der Spalte<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 8px 8px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:top;">100.0%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 8px 8px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:top;">100.0%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 8px 8px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:top;">100.0%<span style="font-weight:400;"></span>
+</td>
+</tr>
+</tbody>
+<tfoot></tfoot>
+</table>
+<p>&nbsp;</p>
+
+
+
+
+    
+        <meta charset="utf-8">
+<meta name="generator" content="jamovi 2.6.26.0">
+<title>Results</title>
+<style>
+
+    table {
+        border-spacing: 0 ;
+        page-break-inside: avoid;
+    }
+
+    table tr td, table tr th {
+        page-break-inside: avoid;
+        font-size: 12px ;
+    }
+
+    .ql-align-center {
+        text-align: center;
+    }
+
+    .ql-align-right {
+        text-align: right;
+    }
+
+    .ql-align-justify {
+        text-align: justify;
+    }
+
+    .ql-indent-1 {
+        padding-left: 3em;
+    }
+
+    .ql-indent-2 {
+        padding-left: 6em;
+    }
+
+    .ql-indent-3 {
+        padding-left: 9em;
+    }
+
+    .ql-indent-4 {
+        padding-left: 12em;
+    }
+
+    .ql-indent-5 {
+        padding-left: 15em;
+    }
+
+    .note {
+        margin: 5px 0px;
+    }
+        </style>
+<table aria-labelledby="7" tabindex="0">
+<thead><tr><th scope="colgroup" colspan="4" style="text-align:left;padding:4px 8px 4px 0px;border-top:0px;border-right:0px;border-bottom:1px solid rgb(51, 51, 51);border-left:0px;vertical-align:baseline;caption-side:top;"><span id="7" style="font-weight:400;">χ²-Tests</span></th></tr></thead>
+<thead><tr>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:1px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">&nbsp;</th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:1px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">Wert</th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:1px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">df</th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:1px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">p</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row" style="text-align:left;padding:8px 8px 4px 8px;border:0px;vertical-align:top;">χ²<span style="font-weight:400;"></span>
+</th>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">0.521<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">4<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">0.971<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<th scope="row" style="text-align:left;padding:4px 8px 4px 8px;border:0px;vertical-align:top;">χ² mit Kontinuitätskorrektur<span style="font-weight:400;"></span>
+</th>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">0.521<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">4<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">0.971<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<th scope="row" style="text-align:left;padding:4px 8px 8px 8px;border-top:0px;border-right:0px;border-bottom:2px solid rgb(51, 51, 51);border-left:0px;vertical-align:top;">N<span style="font-weight:400;"></span>
+</th>
+<td style="text-align:right;padding:2px 20px 8px 8px;border-top:0px;border-right:0px;border-bottom:2px solid rgb(51, 51, 51);border-left:0px;vertical-align:top;">1313<span style="font-weight:400;"></span>
+</td>
+<td style="padding:1px 1px 8px 1px;border-top:0px;border-right:0px;border-bottom:2px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">&nbsp;</td>
+<td style="padding:1px 1px 8px 1px;border-top:0px;border-right:0px;border-bottom:2px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">&nbsp;</td>
+</tr>
+</tbody>
+<tfoot></tfoot>
+</table>
+<p>&nbsp;</p>
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="https://davidfoxcroft.github.io/lsj-book/10-Categorical-data-analysis_files/figure-html/fig-fig10-2-1.png" class="img-fluid figure-img"></p>
+<figcaption>Illustration of how the hypothesis testing works for the (chi-square) goodness of-fit test (Navarro, D., &amp; Foxcroft, D., 2025)</figcaption></figure>
+</div>
+</div>
+<div class="g-col-7">
+<p><img src="images/bi_barplot_r.png" class="img-fluid"><img src="images/bi_barplot.png" class="img-fluid"></p>
+<p><img src="images/bi_barplot2.png" class="img-fluid"><img src="images/bi_barplot3.png" class="img-fluid"></p>
+</div>
+</div>
+<p><img src="images/AZ_BI.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Übung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Fragestellung</strong>: Gibt es einen Zusammenhang zwischen Diskriminierungserfahrung und Anzahl afrikanischer Elternteile?</p>
+<p>“Mein Kind bekommt aufgrund rassistischer Zuschreibungen in der Schule schlechtere Noten als andere Kinder bei gleicher Leistung.”</p>
+<p>Wie häufig erleben Sie diese Situation?</p>
+<p><strong>Daten</strong>: <a href="https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/afrozensus_data_2.xlsx" class="uri">https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/afrozensus_data_2.xlsx</a></p>
+<p><strong>Variable</strong>: Rassismus_Kind_Schlechte_Noten</p>
+<ul>
+<li>Nie (0)</li>
+<li>Selten (1)</li>
+<li>Manchmal (2)</li>
+<li>Oft (3)</li>
+<li>Sehr häufig (4)</li>
+</ul>
+<p><strong>Variable</strong>: Anzahl_Afrika_Eltern (Anzahl Afrikanischer Elternteile)</p>
+<ul>
+<li>1</li>
+<li>2</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="grid">
+<div class="g-col-5">
+
+    
+        <meta charset="utf-8">
+<meta name="generator" content="jamovi 2.6.26.0">
+<title>Results</title>
+<style>
+    table {
+        border-spacing: 0 ;
+        page-break-inside: avoid;
+    }
+
+    table tr td, table tr th {
+        page-break-inside: avoid;
+        font-size: 12px ;
+    }
+
+    .ql-align-center {
+        text-align: center;
+    }
+
+    .ql-align-right {
+        text-align: right;
+    }
+
+    .ql-align-justify {
+        text-align: justify;
+    }
+
+    .ql-indent-1 {
+        padding-left: 3em;
+    }
+
+    .ql-indent-2 {
+        padding-left: 6em;
+    }
+
+    .ql-indent-3 {
+        padding-left: 9em;
+    }
+
+    .ql-indent-4 {
+        padding-left: 12em;
+    }
+
+    .ql-indent-5 {
+        padding-left: 15em;
+    }
+
+    .note {
+        margin: 5px 0px;
+    }
+        </style>
+<p style="text-align:left;padding:0px 0px 0px 0px;"></p>
+            
+        <table aria-labelledby="3" tabindex="0">
+<thead><tr><th scope="colgroup" colspan="5" style="text-align:left;padding:4px 8px 4px 0px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:baseline;caption-side:top;"><span id="3" style="font-weight:400;">Kreuztabellen</span></th></tr></thead>
+<thead>
+<tr>
+<th scope="colgroup" colspan="2" style="text-align:center;padding:4px 8px 4px 8px;border:0px;vertical-align:middle;"></th>
+<th scope="colgroup" colspan="2" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">Anzahl_Afrika_Eltern</th>
+<th scope="colgroup" colspan="1" style="text-align:center;padding:4px 8px 4px 8px;border:0px;vertical-align:middle;"></th>
+</tr>
+<tr>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">Rassismus_Kind_Schlechte_Noten</th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;"> </th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">1</th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">2</th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">Insgesamt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Nie<span style="font-weight:400;"></span>
+</td>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Beobachtet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">84<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">53<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">137<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">Erwartet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">79.2<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">57.8<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">137.0<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">% der Spalte<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">50.6%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">43.8%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">47.7%<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Selten<span style="font-weight:400;"></span>
+</td>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Beobachtet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">21<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">15<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">36<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">Erwartet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">20.8<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">15.2<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">36.0<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">% der Spalte<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">12.7%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">12.4%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">12.5%<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Manchmal<span style="font-weight:400;"></span>
+</td>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Beobachtet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">28<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">24<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">52<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">Erwartet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">30.1<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">21.9<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">52.0<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">% der Spalte<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">16.9%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">19.8%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">18.1%<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Oft<span style="font-weight:400;"></span>
+</td>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Beobachtet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">22<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">15<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">37<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">Erwartet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">21.4<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">15.6<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">37.0<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">% der Spalte<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">13.3%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">12.4%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">12.9%<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Sehr häufig<span style="font-weight:400;"></span>
+</td>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Beobachtet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">11<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">14<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">25<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">Erwartet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">14.5<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">10.5<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">25.0<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">% der Spalte<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">6.6%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">11.6%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">8.7%<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Insgesamt<span style="font-weight:400;"></span>
+</td>
+<td style="padding:8px 8px 2px 8px;border:0px;vertical-align:top;">Beobachtet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">166<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">121<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">287<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 1px 1px;border:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 2px 8px;border:0px;vertical-align:top;">Erwartet<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">166<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">121<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 2px 8px;border:0px;vertical-align:top;">287<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<td style="padding:1px 1px 8px 1px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;"> </td>
+<td style="padding:2px 8px 8px 8px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:top;">% der Spalte<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 8px 8px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:top;">100.0%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 8px 8px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:top;">100.0%<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:2px 20px 8px 8px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:top;">100.0%<span style="font-weight:400;"></span>
+</td>
+</tr>
+</tbody>
+<tfoot></tfoot>
+</table>
+<p>&nbsp;</p>
+            
+                <p style="text-align:left;padding:0px 0px 0px 0px;"></p>
+            
+        <table aria-labelledby="5" tabindex="0">
+<thead><tr><th scope="colgroup" colspan="4" style="text-align:left;padding:4px 8px 4px 0px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:baseline;caption-side:top;"><span id="5" style="font-weight:400;">χ²-Tests</span></th></tr></thead>
+<thead><tr>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;"> </th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">Wert</th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">df</th>
+<th scope="col" style="text-align:center;padding:4px 8px 4px 8px;border-top:0px;border-right:0px;border-bottom:0.8px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;">p</th>
+</tr></thead>
+<tbody>
+<tr>
+<th scope="row" style="text-align:left;padding:8px 8px 4px 8px;border:0px;vertical-align:top;">χ²<span style="font-weight:400;"></span>
+</th>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">3.03<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">4<span style="font-weight:400;"></span>
+</td>
+<td style="text-align:right;padding:8px 20px 2px 8px;border:0px;vertical-align:top;">0.554<span style="font-weight:400;"></span>
+</td>
+</tr>
+<tr>
+<th scope="row" style="text-align:left;padding:4px 8px 8px 8px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:top;">N<span style="font-weight:400;"></span>
+</th>
+<td style="text-align:right;padding:2px 20px 8px 8px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:top;">287<span style="font-weight:400;"></span>
+</td>
+<td style="padding:1px 1px 8px 1px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;"> </td>
+<td style="padding:1px 1px 8px 1px;border-top:0px;border-right:0px;border-bottom:1.6px solid rgb(51, 51, 51);border-left:0px;vertical-align:middle;"> </td>
+</tr>
+</tbody>
+<tfoot></tfoot>
+</table>
+<p>&nbsp;</p>
+            
+                <p style="text-align:left;padding:0px 0px 0px 0px;"></p>
+            
+        
+
+
+</div>
+<div class="g-col-7">
+<p><img src="images/uebung_az.png" class="img-fluid"></p>
+</div>
+</div>
+<p><img src="images/AZ_BI_UEBUNG.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</section><section id="next" class="level2"><h2 class="anchored" data-anchor-id="next">Next</h2>
+<p>SPSS import (Q1, Q2, Q3)</p>
+<p>Boxplot / Histogramme (Mann Zeichen Test)</p>
+<p>Gruppen-Vergeleich (t Test)</p>
 </section><section id="r-session-info" class="level2"><h2 class="anchored" data-anchor-id="r-session-info">R Session Info</h2>
 <div class="cell">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/">devtools</a></span><span class="op">)</span></span>
@@ -314,7 +1530,7 @@ Afrozensus-Daten
  collate  German_Germany.utf8
  ctype    German_Germany.utf8
  tz       Europe/Berlin
- date     2025-07-07
+ date     2025-07-11
  pandoc   3.4 @ C:/Program Files/RStudio/resources/app/bin/quarto/bin/tools/ (via rmarkdown)
  quarto   NA @ C:\\PROGRA~1\\RStudio\\RESOUR~1\\app\\bin\\quarto\\bin\\quarto.exe
 
