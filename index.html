@@ -95,7 +95,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Letzte Aktualisierung</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">11. Juli 2025</p>
+        <p class="date">15. Juli 2025</p>
       </div>
     </div>
     
@@ -109,7 +109,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content quarto-banner-title-block column-page" id="quarto-document-content"><nav id="TOC" role="doc-toc"><h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-<li><a href="#der-%C3%BCbergang-von-spss-zu-jamovi" id="toc-der-übergang-von-spss-zu-jamovi">Der Übergang von SPSS zu jamovi</a></li>
+<li><a href="#open-science-open-source-software" id="toc-open-science-open-source-software">Open Science: Open Source Software</a></li>
+  <li><a href="#der-%C3%BCbergang-von-spss-zu-jamovi" id="toc-der-übergang-von-spss-zu-jamovi">Der Übergang von SPSS zu jamovi</a></li>
   <li><a href="#wer-oder-was-ist-jamovi" id="toc-wer-oder-was-ist-jamovi">Wer oder was ist jamovi?</a></li>
   <li><a href="#wir-starten-jamovi" id="toc-wir-starten-jamovi">Wir starten jamovi</a></li>
   <li><a href="#daten-beispiel-afrozensus" id="toc-daten-beispiel-afrozensus">Daten-Beispiel: Afrozensus</a></li>
@@ -117,8 +118,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#wir-verfeinern-die-analysen-mit-r" id="toc-wir-verfeinern-die-analysen-mit-r">Wir verfeinern die Analysen mit R</a></li>
   <li><a href="#inferenzstatistik-klassischer-hypothesentest-binomialtest" id="toc-inferenzstatistik-klassischer-hypothesentest-binomialtest">Inferenzstatistik: Klassischer Hypothesentest (Binomialtest)</a></li>
   <li><a href="#bivariate-statistik-kategoriale-daten-und-kontingenztabellen-chi-quadrat-test" id="toc-bivariate-statistik-kategoriale-daten-und-kontingenztabellen-chi-quadrat-test">Bivariate Statistik: Kategoriale Daten und Kontingenztabellen (Chi-Quadrat-Test)</a></li>
-  <li><a href="#next" id="toc-next">Next</a></li>
-  <li><a href="#r-session-info" id="toc-r-session-info">R Session Info</a></li>
+  <li><a href="#spss-import-und--export" id="toc-spss-import-und--export">SPSS-Import und -Export</a></li>
+  <li><a href="#analyse-metrischerkontinuierlicher-daten-einstichproben-t-test" id="toc-analyse-metrischerkontinuierlicher-daten-einstichproben-t-test">Analyse metrischer/kontinuierlicher Daten (Einstichproben-t-Test)</a></li>
+  <li><a href="#analyse-metrischerkontinuierlicher-daten-zweistichproben-t-test" id="toc-analyse-metrischerkontinuierlicher-daten-zweistichproben-t-test">Analyse metrischer/kontinuierlicher Daten (Zweistichproben-t-Test)</a></li>
   </ul></nav><style>
 /* Add logo to the title banner */
 #title-block-header.quarto-title-block.default .quarto-title::before {
@@ -133,7 +135,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   margin-bottom: 20px;
 }
 </style>
-<section id="der-übergang-von-spss-zu-jamovi" class="level2"><h2 class="anchored" data-anchor-id="der-übergang-von-spss-zu-jamovi">Der Übergang von SPSS zu jamovi</h2>
+<section id="open-science-open-source-software" class="level2"><h2 class="anchored" data-anchor-id="open-science-open-source-software">Open Science: Open Source Software</h2>
+<div class="grid">
+<div class="g-col-6">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="https://creativecommons.org/wp-content/uploads/2021/11/UNESCO-Open-Science-circle-768x979.png" class="img-fluid figure-img"></p>
+<figcaption>UNESCO Recommendation on Open Science</figcaption></figure>
+</div>
+</div>
+<div class="g-col-6">
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/I3Wkvx_ZaFo?si=s_fBoOqPHXx-t65K" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<blockquote class="blockquote">
+<p><strong>Open source software</strong> and source code that generally include software whose source code is made publicly available, in a timely and user-friendly manner, in human- and machine-readable and modifiable format, under an open license that grants others the right to use, access, modify, expand, study, create derivative works and share the software and its source code, design or blueprint. The source code must be included in the software release and made available on openly accessible repositories and the chosen license must allow modifications, derivative works and sharing under equal or compatible open terms and conditions. In the context of open science, when open source code is a component of a research process, enabling reuse and replication generally requires that it be accompanied with open data and open specifications of the environment required to compile and run it.</p>
+</blockquote>
+<p>UNESCO (2021). UNESCO Recommendation on Open Science. UNESCO. <a href="https://doi.org/10.54677/mnmh8546" class="uri">https://doi.org/10.54677/mnmh8546</a></p>
+</div>
+</div>
+</section><section id="der-übergang-von-spss-zu-jamovi" class="level2"><h2 class="anchored" data-anchor-id="der-übergang-von-spss-zu-jamovi">Der Übergang von SPSS zu jamovi</h2>
 <div class="grid">
 <div class="g-col-6">
 <div class="quarto-figure quarto-figure-center">
@@ -314,13 +332,15 @@ Afrozensus-Daten
 </li>
 </ul>
 <p><strong>Fiktives Beispiel</strong>: In einer Zeitung wird behauptet, dass bei der Hälfte der Menschen afrikanischer Herkunft ein Elternteil nicht afrikanischer Herkunft sei.</p>
-<p>Intuitiv gehen Sie davon aus, dass der Anteil deutlich höher sein müsste (als in der Zeitung behauptet wird). Damit haben wir unsere <strong>Forschungshypothese</strong>, die sogenannte <strong>Alternativhypothese</strong>, formuliert:</p>
+<p>Intuitiv gehen Sie davon aus, dass der Anteil deutlich höher sein müsste (als in der Zeitung behauptet wird). Damit haben wir unsere <strong>Forschungshypothese</strong>, die sogenannte (gerichtete) <strong>Alternativhypothese</strong>, formuliert:</p>
 <ul>
-<li>Der Anteil der Menschen afrikanischer Herkunft, die einen Elternteil nicht afrikanischer Herkunft haben, liegt über 50%.(Anteil &gt; 50%)</li>
+<li>Der Anteil der Menschen afrikanischer Herkunft, die einen Elternteil nicht afrikanischer Herkunft haben, liegt über 50%. <strong>(Anteil &gt; 50%)</strong>
+</li>
 </ul>
 <p>Dem gegenüber steht die Behauptung aus der Zeitung, die sogenannte <strong>Nullhypothese</strong>:</p>
 <ul>
-<li>Der Anteil der Menschen afrikanischer Herkunft, die einen Elternteil nicht afrikanischer Herkunft haben, liegt bei 50%. (Anteil = 50%)</li>
+<li>Der Anteil der Menschen afrikanischer Herkunft, die einen Elternteil nicht afrikanischer Herkunft haben, liegt bei 50%. <strong>(Anteil = 50%)</strong>
+</li>
 </ul>
 <p><strong>Vorgehen</strong>:</p>
 <ul>
@@ -438,7 +458,7 @@ Afrozensus-Daten
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Visualisierung (Binomialtest)
+Visualisierung (Binomialtest) und Interpretation des <em>p</em>-Wertes
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -514,6 +534,21 @@ Visualisierung (Binomialtest)
 <blockquote class="blockquote">
 <p>The P value is a measure of statistical evidence that appears in virtually all medical research papers. Its interpretation is made extraordinarily difficult because it is not part of any formal system of statistical inference. As a result, <strong>the P value’s inferential meaning is widely and often wildly misconstrued</strong>, a fact that has been pointed out in innumerable papers and books appearing since at least the 1940s. This commentary reviews a dozen of these common misinterpretations and explains why each is wrong. It also reviews the possible consequences of these improper understandings or representations of its meaning. Finally, it contrasts the P value with its Bayesian counterpart, the Bayes’ factor, which has virtually all of the desirable properties of an evidential measure that the P value lacks, most notably interpretability. The most serious consequence of this array of P-value misconceptions is the false belief that the probability of a conclusion being in error can be calculated from the data in a single experiment without reference to external evidence or the plausibility of the underlying mechanism.</p>
 </blockquote>
+<p><strong>Twelve P-Value Misconceptions</strong>:</p>
+<ol type="1">
+<li>If P = .05, the null hypothesis has only a 5% chance of being true.</li>
+<li>A nonsignificant difference (eg, P ≥.05) means there is no difference between groups.</li>
+<li>A statistically significant finding is clinically important.</li>
+<li>Studies with P values on opposite sides of .05 are conflicting.</li>
+<li>Studies with the same P value provide the same evidence against the null hypothesis.</li>
+<li>P = .05 means that we have observed data that would occur only 5% of the time under the null hypothesis.</li>
+<li>P = .05 and P ≤.05 mean the same thing.</li>
+<li>P values are properly written as inequalities (eg, “P ≤.02” when P = .015)</li>
+<li>P = .05 means that if you reject the null hypothesis, the probability of a type I error is only 5%.</li>
+<li>With a P = .05 threshold for significance, the chance of a type I error will be 5%.</li>
+<li>You should use a one-sided P value when you don’t care about a result in one direction, or a difference in that direction is impossible.</li>
+<li>A scientific conclusion or treatment policy should be based on whether or not the P value is significant.</li>
+</ol>
 </div>
 </div>
 </section><section id="bivariate-statistik-kategoriale-daten-und-kontingenztabellen-chi-quadrat-test" class="level2"><h2 class="anchored" data-anchor-id="bivariate-statistik-kategoriale-daten-und-kontingenztabellen-chi-quadrat-test">Bivariate Statistik: Kategoriale Daten und Kontingenztabellen (Chi-Quadrat-Test)</h2>
@@ -1151,10 +1186,10 @@ Visualisierung (Binomialtest)
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Fragestellung</strong>: Gibt es einen Zusammenhang zwischen Diskriminierungserfahrung und Anzahl afrikanischer Elternteile?</p>
-<p>“Mein Kind bekommt aufgrund rassistischer Zuschreibungen in der Schule schlechtere Noten als andere Kinder bei gleicher Leistung.”</p>
-<p>Wie häufig erleben Sie diese Situation?</p>
 <p><strong>Daten</strong>: <a href="https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/afrozensus_data_2.xlsx" class="uri">https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/afrozensus_data_2.xlsx</a></p>
 <p><strong>Variable</strong>: Rassismus_Kind_Schlechte_Noten</p>
+<p><em>“Mein Kind bekommt aufgrund rassistischer Zuschreibungen in der Schule schlechtere Noten als andere Kinder bei gleicher Leistung.”</em></p>
+<p>Wie häufig erleben Sie diese Situation?</p>
 <ul>
 <li>Nie (0)</li>
 <li>Selten (1)</li>
@@ -1505,82 +1540,156 @@ Lösung
 </div>
 <div class="g-col-7">
 <p><img src="images/uebung_az.png" class="img-fluid"></p>
+<hr>
+<ul>
+<li>Don’t base your conclusions solely on whether an association or effect was found to be “statistically significant” (i.e., the p-value passed some arbitrary threshold such as p &lt; 0.05).</li>
+<li>Don’t believe that an association or effect exists just because it was statistically significant.</li>
+<li>Don’t believe that an association or effect is absent just because it was not statistically significant.</li>
+<li>Don’t believe that your p-value gives the probability that chance alone produced the observed association or effect or the probability that your test hypothesis is true.</li>
+<li><strong>Don’t conclude anything about scientific or practical importance based on statistical significance (or lack thereof).</strong></li>
+<li><strong>Moving beyond “statistical significance” opens researchers to the real significance of statistics, which is “the science of learning from data, and of measuring, controlling, and communicating uncertainty” (Davidian and Louis 2012).</strong></li>
+</ul>
+<p>Wasserstein, R. L., Schirm, A. L., &amp; Lazar, N. A. (2019). Moving to a World Beyond “p  &lt; 0.05.” The American Statistician, 73(sup1), 1–19. <a href="https://doi.org/10.1080/00031305.2019.1583913" class="uri">https://doi.org/10.1080/00031305.2019.1583913</a></p>
+<hr>
 </div>
 </div>
 <p><img src="images/AZ_BI_UEBUNG.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
-</section><section id="next" class="level2"><h2 class="anchored" data-anchor-id="next">Next</h2>
-<p>SPSS import (Q1, Q2, Q3)</p>
-<p>Boxplot / Histogramme (Mann Zeichen Test)</p>
-<p>Gruppen-Vergeleich (t Test)</p>
-</section><section id="r-session-info" class="level2"><h2 class="anchored" data-anchor-id="r-session-info">R Session Info</h2>
-<div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/">devtools</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://sessioninfo.r-lib.org/reference/session_info.html">session_info</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>─ Session info ───────────────────────────────────────────────────────────────
- setting  value
- version  R version 4.5.0 (2025-04-11 ucrt)
- os       Windows 11 x64 (build 26100)
- system   x86_64, mingw32
- ui       RTerm
- language (EN)
- collate  German_Germany.utf8
- ctype    German_Germany.utf8
- tz       Europe/Berlin
- date     2025-07-11
- pandoc   3.4 @ C:/Program Files/RStudio/resources/app/bin/quarto/bin/tools/ (via rmarkdown)
- quarto   NA @ C:\\PROGRA~1\\RStudio\\RESOUR~1\\app\\bin\\quarto\\bin\\quarto.exe
-
-─ Packages ───────────────────────────────────────────────────────────────────
- package     * version date (UTC) lib source
- cachem        1.1.0   2024-05-16 [1] CRAN (R 4.5.0)
- cli           3.6.5   2025-04-23 [1] CRAN (R 4.5.0)
- devtools    * 2.4.5   2022-10-11 [1] CRAN (R 4.5.0)
- digest        0.6.37  2024-08-19 [1] CRAN (R 4.5.0)
- ellipsis      0.3.2   2021-04-29 [1] CRAN (R 4.5.0)
- evaluate      1.0.3   2025-01-10 [1] CRAN (R 4.5.0)
- fastmap       1.2.0   2024-05-15 [1] CRAN (R 4.5.0)
- fs            1.6.6   2025-04-12 [1] CRAN (R 4.5.0)
- glue          1.8.0   2024-09-30 [1] CRAN (R 4.5.0)
- htmltools     0.5.8.1 2024-04-04 [1] CRAN (R 4.5.0)
- htmlwidgets   1.6.4   2023-12-06 [1] CRAN (R 4.5.0)
- httpuv        1.6.16  2025-04-16 [1] CRAN (R 4.5.0)
- jsonlite      2.0.0   2025-03-27 [1] CRAN (R 4.5.0)
- knitr         1.50    2025-03-16 [1] CRAN (R 4.5.0)
- later         1.4.2   2025-04-08 [1] CRAN (R 4.5.0)
- lifecycle     1.0.4   2023-11-07 [1] CRAN (R 4.5.0)
- magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.5.0)
- memoise       2.0.1   2021-11-26 [1] CRAN (R 4.5.0)
- mime          0.13    2025-03-17 [1] CRAN (R 4.5.0)
- miniUI        0.1.2   2025-04-17 [1] CRAN (R 4.5.0)
- pkgbuild      1.4.7   2025-03-24 [1] CRAN (R 4.5.0)
- pkgload       1.4.0   2024-06-28 [1] CRAN (R 4.5.0)
- profvis       0.4.0   2024-09-20 [1] CRAN (R 4.5.0)
- promises      1.3.2   2024-11-28 [1] CRAN (R 4.5.0)
- purrr         1.0.4   2025-02-05 [1] CRAN (R 4.5.0)
- R6            2.6.1   2025-02-15 [1] CRAN (R 4.5.0)
- Rcpp          1.0.14  2025-01-12 [1] CRAN (R 4.5.0)
- remotes       2.5.0   2024-03-17 [1] CRAN (R 4.5.0)
- rlang         1.1.6   2025-04-11 [1] CRAN (R 4.5.0)
- rmarkdown     2.29    2024-11-04 [1] CRAN (R 4.5.0)
- rstudioapi    0.17.1  2024-10-22 [1] CRAN (R 4.5.0)
- sessioninfo   1.2.3   2025-02-05 [1] CRAN (R 4.5.0)
- shiny         1.10.0  2024-12-14 [1] CRAN (R 4.5.0)
- urlchecker    1.0.1   2021-11-30 [1] CRAN (R 4.5.0)
- usethis     * 3.1.0   2024-11-26 [1] CRAN (R 4.5.0)
- vctrs         0.6.5   2023-12-01 [1] CRAN (R 4.5.0)
- xfun          0.52    2025-04-02 [1] CRAN (R 4.5.0)
- xtable        1.8-4   2019-04-21 [1] CRAN (R 4.5.0)
- yaml          2.3.10  2024-07-26 [1] CRAN (R 4.5.0)
-
- [1] C:/Users/Graduiertenschule/AppData/Local/R/win-library/4.5
- [2] C:/Program Files/R/R-4.5.0/library
- * ── Packages attached to the search path.
-
-──────────────────────────────────────────────────────────────────────────────</code></pre>
+</section><section id="spss-import-und--export" class="level2"><h2 class="anchored" data-anchor-id="spss-import-und--export">SPSS-Import und -Export</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+SPSS-Daten
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Díez-Palomar J, García-Carrión R, Hargreaves L, Vieites M (2020) Transforming students’ attitudes towards learning through the use of successful educational actions. PLoS ONE 15(10): e0240292.</p>
+<ul>
+<li>
+<a href="https://doi.org/10.1371/journal.pone.0240292" class="uri">https://doi.org/10.1371/journal.pone.0240292</a> (Paper)</li>
+<li>
+<a href="https://doi.org/10.1371/journal.pone.0240292.s002" class="uri">https://doi.org/10.1371/journal.pone.0240292.s002</a> (SPSS-Datensatz pone.0240292.s002.sav)</li>
+</ul>
+</div>
+</div>
+<p>Hinweis zu Variablen-Namen: <a href="https://forum.jamovi.org/viewtopic.php?t=1085" class="uri">https://forum.jamovi.org/viewtopic.php?t=1085</a></p>
+</section><section id="analyse-metrischerkontinuierlicher-daten-einstichproben-t-test" class="level2"><h2 class="anchored" data-anchor-id="analyse-metrischerkontinuierlicher-daten-einstichproben-t-test">Analyse metrischer/kontinuierlicher Daten (Einstichproben-t-Test)</h2>
+<ul>
+<li>
+<strong>Buch-Kapitel</strong>: <a href="https://davidfoxcroft.github.io/lsj-book/11-Comparing-two-means.html" class="uri">https://davidfoxcroft.github.io/lsj-book/11-Comparing-two-means.html</a>
+</li>
+<li>
+<strong>Tutorial</strong>: <a href="https://datatab.de/tutorial/t-test" class="uri">https://datatab.de/tutorial/t-test</a>
+</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Datenquelle
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Imuta K, Scarf D, Pharo H, Hayne H (2013) Drawing a Close to the Use of Human Figure Drawings as a Projective Measure of Intelligence. PLoS ONE 8(3): e58991.</p>
+<ul>
+<li>
+<a href="https://doi.org/10.1371/journal.pone.0058991" class="uri">https://doi.org/10.1371/journal.pone.0058991</a> (Paper)</li>
+<li>
+<a href="https://doi.org/10.1371/journal.pone.0058991.s001" class="uri">https://doi.org/10.1371/journal.pone.0058991.s001</a> (Daten im Word-Format)</li>
+<li>
+<a href="https://github.com/PawelKulawiak/rworkshop/raw/refs/heads/main/DATA_doi_10.1371_journal.pone.0058991.xlsx" class="uri">https://github.com/PawelKulawiak/rworkshop/raw/refs/heads/main/DATA_doi_10.1371_journal.pone.0058991.xlsx</a> (Direkter Download: Daten im Excel-Format)</li>
+</ul>
+<p>Variablen:</p>
+<ul>
+<li>
+<strong>DAP_IQ</strong>: <a href="https://en.wikipedia.org/wiki/Draw-a-Person_test">Draw-A-Person Intellectual Ability Test</a> (<a href="https://www.testzentrale.de/shop/der-mann-zeichen-test.html">Mann-Zeichen-Test</a>)</li>
+<li>
+<strong>WPPSI</strong>: <a href="https://de.wikipedia.org/wiki/Wechsler_Preschool_and_Primary_Scale_of_Intelligence">Wechsler Preschool and Primary Scale of Intelligence</a>
+</li>
+</ul>
+<p><br></p>
+<div class="grid">
+<div class="g-col-4">
+<p><img src="https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0058991.g003&amp;type=large" class="img-fluid"></p>
+</div>
+<div class="g-col-3">
+<p><img src="https://www.testzentrale.de/shop/media/catalog/product/cache/1600x/17f82f742ffe127f42dca9de82fb58b1/4/7/4700801.jpg" class="img-fluid"></p>
+</div>
+<div class="g-col-3">
+<p><img src="https://www.testzentrale.de/shop/media/catalog/product/cache/1600x/17f82f742ffe127f42dca9de82fb58b1/2/8/2813001.jpg" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Fragestellung</strong>: Ist der mittlere IQ der Stichprobe größer als 100?</p>
+<ul>
+<li>
+<strong>Nullhypothese</strong>: IQ = 100</li>
+<li>
+<strong>Gerichtete Alternativhypothese</strong>: IQ &gt; 100</li>
+</ul></section><section id="analyse-metrischerkontinuierlicher-daten-zweistichproben-t-test" class="level2"><h2 class="anchored" data-anchor-id="analyse-metrischerkontinuierlicher-daten-zweistichproben-t-test">Analyse metrischer/kontinuierlicher Daten (Zweistichproben-t-Test)</h2>
+<ul>
+<li>
+<strong>Buch-Kapitel</strong>: <a href="https://davidfoxcroft.github.io/lsj-book/11-Comparing-two-means.html" class="uri">https://davidfoxcroft.github.io/lsj-book/11-Comparing-two-means.html</a>
+</li>
+<li>
+<strong>Tutorial</strong>: <a href="https://datatab.de/tutorial/t-test" class="uri">https://datatab.de/tutorial/t-test</a>
+</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Daten
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Vyrastekova, J. (2021). Social inclusion of students with special educational needs assessed by the Inclusion of Other in the Self scale. PLOS ONE, 16(4), e0250070. <a href="https://doi.org/10.1371/journal.pone.0250070" class="uri">https://doi.org/10.1371/journal.pone.0250070</a></p>
+<p><strong>SPSS-Datensatz</strong>: <a href="https://doi.org/10.1371/journal.pone.0250070.s003" class="uri">https://doi.org/10.1371/journal.pone.0250070.s003</a></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Übung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Fragestellung</strong>: Erleben Schüler:innen mit psychischen Verhaltensauffälligkeiten mehr Einsamkeit in der Schule (im Vergleich zu Schüler:innen ohne psychische Verhaltensauffälligkeiten)?</p>
+<ul>
+<li>Formulieren Sie die Nullhypothese und die gerichtete Alternativhypothese.</li>
+<li>Visualisieren Sie den Unterschied zwischen den Gruppen mit Violin-Boxplots (mit Datenpunkten).</li>
+<li>Machen Sie den t-Test.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><img src="images/L1.png" class="img-fluid"></p>
+<p><img src="images/L2.png" class="img-fluid"></p>
+</div>
 </div>
 </div>
 </section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Wiederverwendung</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.de">CC BY-SA 4.0</a></div></div></section></div></main><!-- /main column --><script id="quarto-html-after-body" type="application/javascript">

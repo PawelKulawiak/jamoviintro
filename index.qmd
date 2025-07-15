@@ -44,6 +44,23 @@ author:
 </style>
 ```
 
+## Open Science: Open Source Software
+
+::::: grid
+::: g-col-6
+![UNESCO Recommendation on Open Science](https://creativecommons.org/wp-content/uploads/2021/11/UNESCO-Open-Science-circle-768x979.png)
+:::
+
+::: g-col-6
+
+{{< video https://www.youtube.com/embed/I3Wkvx_ZaFo?si=s_fBoOqPHXx-t65K >}}
+
+> **Open  source  software** and  source  code  that  generally  include  software whose source code is made publicly available, in a timely and  user-friendly  manner,  in  human-  and  machine-readable  and  modifiable  format,  under  an  open  license  that  grants  others  the  right to use, access, modify, expand, study, create derivative works and  share  the  software  and  its  source  code,  design  or  blueprint.  The  source  code  must  be  included  in  the  software  release  and  made  available  on  openly  accessible  repositories  and  the  chosen  license  must  allow  modifications,  derivative  works  and  sharing  under  equal  or  compatible  open  terms  and  conditions.  In  the  context  of  open  science,  when  open  source  code  is  a  component  of  a  research  process,  enabling  reuse  and  replication  generally  requires   that   it   be   accompanied   with   open   data   and   open   specifications  of  the  environment  required  to  compile  and  run  it.
+
+UNESCO (2021). UNESCO Recommendation on Open Science. UNESCO. <https://doi.org/10.54677/mnmh8546>
+:::
+::::::
+
 ## Der Übergang von SPSS zu jamovi
 
 ::::: grid
@@ -233,13 +250,13 @@ ggplot(plot_data, aes(x = factor(Rassismus_Lehrer_Dozenten), y = n)) +
 
 **Fiktives Beispiel**: In einer Zeitung wird behauptet, dass bei der Hälfte der Menschen afrikanischer Herkunft ein Elternteil nicht afrikanischer Herkunft sei.
 
-Intuitiv gehen Sie davon aus, dass der Anteil deutlich höher sein müsste (als in der Zeitung behauptet wird). Damit haben wir unsere **Forschungshypothese**, die sogenannte **Alternativhypothese**, formuliert:
+Intuitiv gehen Sie davon aus, dass der Anteil deutlich höher sein müsste (als in der Zeitung behauptet wird). Damit haben wir unsere **Forschungshypothese**, die sogenannte (gerichtete) **Alternativhypothese**, formuliert:
 
-- Der Anteil der Menschen afrikanischer Herkunft, die einen Elternteil nicht afrikanischer Herkunft haben, liegt über 50%.(Anteil > 50%)
+- Der Anteil der Menschen afrikanischer Herkunft, die einen Elternteil nicht afrikanischer Herkunft haben, liegt über 50%. **(Anteil > 50%)**
 
 Dem gegenüber steht die Behauptung aus der Zeitung, die sogenannte **Nullhypothese**:
 
-- Der Anteil der Menschen afrikanischer Herkunft, die einen Elternteil nicht afrikanischer Herkunft haben, liegt bei 50%. (Anteil = 50%)
+- Der Anteil der Menschen afrikanischer Herkunft, die einen Elternteil nicht afrikanischer Herkunft haben, liegt bei 50%. **(Anteil = 50%)**
 
 **Vorgehen**:
 
@@ -317,7 +334,7 @@ Dem gegenüber steht die Behauptung aus der Zeitung, die sogenannte **Nullhypoth
 ```
 
 ::: callout-tip
-## Visualisierung (Binomialtest)
+## Visualisierung (Binomialtest) und Interpretation des *p*-Wertes
 
 - <https://shiny.rit.albany.edu/stat/binomial/>
 
@@ -385,6 +402,22 @@ Sauer, S. (2019). Moderne Datenanalyse mit R. In FOM-Edition. Springer Fachmedie
 Goodman, S. (2008). A Dirty Dozen: Twelve P-Value Misconceptions. Seminars in Hematology, 45(3), 135–140. <https://doi.org/10.1053/j.seminhematol.2008.04.003>
 
 > The P value is a measure of statistical evidence that appears in virtually all medical research papers. Its interpretation is made extraordinarily difficult because it is not part of any formal system of statistical inference. As a result, **the P value's inferential meaning is widely and often wildly misconstrued**, a fact that has been pointed out in innumerable papers and books appearing since at least the 1940s. This commentary reviews a dozen of these common misinterpretations and explains why each is wrong. It also reviews the possible consequences of these improper understandings or representations of its meaning. Finally, it contrasts the P value with its Bayesian counterpart, the Bayes' factor, which has virtually all of the desirable properties of an evidential measure that the P value lacks, most notably interpretability. The most serious consequence of this array of P-value misconceptions is the false belief that the probability of a conclusion being in error can be calculated from the data in a single experiment without reference to external evidence or the plausibility of the underlying mechanism.
+
+
+**Twelve P-Value Misconceptions**:
+
+1.	If P = .05, the null hypothesis has only a 5% chance of being true.
+2.	A nonsignificant difference (eg, P ≥.05) means there is no difference between groups.
+3.	A statistically significant finding is clinically important.
+4.	Studies with P values on opposite sides of .05 are conflicting.
+5.	Studies with the same P value provide the same evidence against the null hypothesis.
+6.	P = .05 means that we have observed data that would occur only 5% of the time under the null hypothesis.
+7.	P = .05 and P ≤.05 mean the same thing.
+8.	P values are properly written as inequalities (eg, “P ≤.02” when P = .015)
+9.	P = .05 means that if you reject the null hypothesis, the probability of a type I error is only 5%.
+10.	With a P = .05 threshold for significance, the chance of a type I error will be 5%.
+11.	You should use a one-sided P value when you don't care about a result in one direction, or a difference in that direction is impossible.
+12.	A scientific conclusion or treatment policy should be based on whether or not the P value is significant.
 :::
 
 ## Bivariate Statistik: Kategoriale Daten und Kontingenztabellen (Chi-Quadrat-Test)
@@ -601,13 +634,13 @@ Goodman, S. (2008). A Dirty Dozen: Twelve P-Value Misconceptions. Seminars in He
 
 **Fragestellung**: Gibt es einen Zusammenhang zwischen Diskriminierungserfahrung und Anzahl afrikanischer Elternteile?
 
-“Mein Kind bekommt aufgrund rassistischer Zuschreibungen in der Schule schlechtere Noten als andere Kinder bei gleicher Leistung.”
-
-Wie häufig erleben Sie diese Situation?
-
 **Daten**: <https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/afrozensus_data_2.xlsx>
 
 **Variable**: Rassismus_Kind_Schlechte_Noten
+
+*“Mein Kind bekommt aufgrund rassistischer Zuschreibungen in der Schule schlechtere Noten als andere Kinder bei gleicher Leistung.”*
+
+Wie häufig erleben Sie diese Situation?
 
 -   Nie (0)
 -   Selten (1)
@@ -703,6 +736,19 @@ Wie häufig erleben Sie diese Situation?
 
 ![](images/uebung_az.png)
 
+---
+
+- Don’t base your conclusions solely on whether an association or effect was found to be “statistically significant” (i.e., the p-value passed some arbitrary threshold such as p < 0.05).
+- Don’t believe that an association or effect exists just because it was statistically significant.
+- Don’t believe that an association or effect is absent just because it was not statistically significant.
+- Don’t believe that your p-value gives the probability that chance alone produced the observed association or effect or the probability that your test hypothesis is true.
+- **Don’t conclude anything about scientific or practical importance based on statistical significance (or lack thereof).**
+- **Moving beyond “statistical significance” opens researchers to the real significance of statistics, which is “the science of learning from data, and of measuring, controlling, and communicating uncertainty” (Davidian and Louis 2012).**
+
+Wasserstein, R. L., Schirm, A. L., & Lazar, N. A. (2019). Moving to a World Beyond “p  &lt; 0.05.” The American Statistician, 73(sup1), 1–19. <https://doi.org/10.1080/00031305.2019.1583913>
+
+---
+
 :::
 
 ::::::
@@ -711,17 +757,87 @@ Wie häufig erleben Sie diese Situation?
 
 :::
 
-## Next
+## SPSS-Import und -Export
 
-SPSS import (Q1, Q2, Q3)
+::: callout-tip
+## SPSS-Daten
 
-Boxplot / Histogramme (Mann Zeichen Test)
+Díez-Palomar J, García-Carrión R, Hargreaves L, Vieites M (2020) Transforming students’ attitudes towards learning through the use of successful educational actions. PLoS ONE 15(10): e0240292.
 
-Gruppen-Vergeleich (t Test)
+-   <https://doi.org/10.1371/journal.pone.0240292> (Paper)
+-   <https://doi.org/10.1371/journal.pone.0240292.s002> (SPSS-Datensatz pone.0240292.s002.sav)
+:::
 
-## R Session Info
+Hinweis zu Variablen-Namen: <https://forum.jamovi.org/viewtopic.php?t=1085>
 
-```{r}
-library(devtools)
-session_info()
-```
+## Analyse metrischer/kontinuierlicher Daten (Einstichproben-t-Test)
+
+- **Buch-Kapitel**: <https://davidfoxcroft.github.io/lsj-book/11-Comparing-two-means.html>
+- **Tutorial**: <https://datatab.de/tutorial/t-test>
+
+::::::: callout-tip
+## Datenquelle
+
+Imuta K, Scarf D, Pharo H, Hayne H (2013) Drawing a Close to the Use of Human Figure Drawings as a Projective Measure of Intelligence. PLoS ONE 8(3): e58991.
+
+- <https://doi.org/10.1371/journal.pone.0058991> (Paper)
+- <https://doi.org/10.1371/journal.pone.0058991.s001> (Daten im Word-Format)
+- <https://github.com/PawelKulawiak/rworkshop/raw/refs/heads/main/DATA_doi_10.1371_journal.pone.0058991.xlsx> (Direkter Download: Daten im Excel-Format)
+
+Variablen:
+
+-   **DAP_IQ**: [Draw-A-Person Intellectual Ability Test](https://en.wikipedia.org/wiki/Draw-a-Person_test) ([Mann-Zeichen-Test](https://www.testzentrale.de/shop/der-mann-zeichen-test.html))
+-   **WPPSI**: [Wechsler Preschool and Primary Scale of Intelligence](https://de.wikipedia.org/wiki/Wechsler_Preschool_and_Primary_Scale_of_Intelligence)
+
+\
+
+:::::: grid
+::: g-col-4
+![](https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0058991.g003&type=large)
+:::
+
+::: g-col-3
+![](https://www.testzentrale.de/shop/media/catalog/product/cache/1600x/17f82f742ffe127f42dca9de82fb58b1/4/7/4700801.jpg)
+:::
+
+::: g-col-3
+![](https://www.testzentrale.de/shop/media/catalog/product/cache/1600x/17f82f742ffe127f42dca9de82fb58b1/2/8/2813001.jpg)
+:::
+::::::
+:::::::
+
+**Fragestellung**: Ist der mittlere IQ der Stichprobe größer als 100?
+
+- **Nullhypothese**: IQ = 100
+- **Gerichtete Alternativhypothese**: IQ > 100
+
+## Analyse metrischer/kontinuierlicher Daten (Zweistichproben-t-Test)
+
+- **Buch-Kapitel**: <https://davidfoxcroft.github.io/lsj-book/11-Comparing-two-means.html>
+- **Tutorial**: <https://datatab.de/tutorial/t-test>
+
+::: callout-tip
+## Daten
+Vyrastekova, J. (2021). Social inclusion of students with special educational needs assessed by the Inclusion of Other in the Self scale. PLOS ONE, 16(4), e0250070. <https://doi.org/10.1371/journal.pone.0250070>
+
+**SPSS-Datensatz**: <https://doi.org/10.1371/journal.pone.0250070.s003>
+:::
+
+::: callout-tip
+## Übung
+**Fragestellung**: Erleben Schüler:innen mit psychischen Verhaltensauffälligkeiten mehr Einsamkeit in der Schule (im Vergleich zu Schüler:innen ohne psychische Verhaltensauffälligkeiten)?
+
+- Formulieren Sie die Nullhypothese und die gerichtete Alternativhypothese.
+- Visualisieren Sie den Unterschied zwischen den Gruppen mit Violin-Boxplots (mit Datenpunkten).
+- Machen Sie den t-Test.
+:::
+
+::: {.callout-tip collapse="true"}
+## Lösung
+
+![](images/L1.png)
+
+![](images/L2.png)
+:::
+
+
