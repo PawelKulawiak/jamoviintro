@@ -791,7 +791,7 @@ Neumann, M., Haas, E.-C., Müller, F., & Maaz, K. (2021). WiKo-Studie. Evaluatio
 
 Skalierung: 1 = stimme überhaupt nicht zu, 2 = stimme eher nicht zu, 3 = stimme eher zu, 4 = stimme voll zu
 
-**Analyse simulierter Daten (Simulation der Daten mit [rsprite2](https://lukaswallrich.github.io/rsprite2/) anhand der Angaben aus der Tabelle)**
+**Analyse simulierter Daten (Simulation der Daten mit [rsprite2](https://lukaswallrich.github.io/rsprite2/) anhand der Angaben aus der Tabelle). Mit den simulierten Daten kann das Ergebnis der Tabelle reproduziert werden, wobei die simulierten Daten und die Originaldaten nicht exakt übereinstimmen.**
 
 **Daten Lehrkräfte Willkommensklassen Sprachförderung**: <https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/willkommensklassen_lehrkraefte_sprache.sav>
 
