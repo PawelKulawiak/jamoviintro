@@ -779,6 +779,29 @@ Wasserstein, R. L., Schirm, A. L., & Lazar, N. A. (2019). Moving to a World Beyo
 
 :::
 
+## Likert-Plot
+
+![](images/wk.png)
+
+**Studie**:
+
+Neumann, M., Haas, E.-C., Müller, F., & Maaz, K. (2021). WiKo-Studie. Evaluation der Willkommensklassen in Berlin. Abschlussbericht. In Frankfurt am Main : DIPF | Leibniz-Institut für Bildungsforschung und Bildungsinformation 2021 (p. 272 S.). DIPF | Leibniz-Institut für Bildungsforschung und Bildungsinformation : Frankfurt am Main. <https://doi.org/10.25656/01:34831>
+
+![](images/dipf_wk.png)
+
+Skalierung: 1 = stimme überhaupt nicht zu, 2 = stimme eher nicht zu, 3 = stimme eher zu, 4 = stimme voll zu
+
+**Analyse simulierter Daten (Simulation der Daten mit [rsprite2](https://lukaswallrich.github.io/rsprite2/) anhand der Angaben aus der Tabelle)**
+
+**Daten Lehrkräfte Willkommensklassen Sprachförderung**: <https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/willkommensklassen_lehrkraefte_sprache.sav>
+
+**Daten Lehrkräfte Willkommensklassen Integration abträglich**: <https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/willkommensklassen_lehrkraefte_integration.sav>
+
+![](images/sprache.png)
+
+![](images/integration.png)
+
+
 ## Analyse metrischer/kontinuierlicher Daten (Einstichproben-t-Test)
 
 - **Buch-Kapitel**: <https://davidfoxcroft.github.io/lsj-book/11-Comparing-two-means.html>
