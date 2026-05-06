@@ -872,4 +872,27 @@ Vyrastekova, J. (2021). Social inclusion of students with special educational ne
 ![](images/L2.png)
 :::
 
+## Korrelation und Regression
+
+Wir arbeiten mit den Mann-Zeichen-Daten (siehe oben).
+
+- Rain-Cloud-Plots mit JASP:
+
+![](images/bivariat.png)
+
+<https://pawelkulawiak.github.io/3in1/>
+
+- Visualisierung mit Visual Modeling/Linear Modeling (JASP)
+- Berechnung Korrelation und Regression (JASP)
+- Visualisierung mit jamovi
+- Berechnung Korrelation und Regression (jamovi)
+
+**Übung**
+
+Analysieren und visualisieren Sie die Afrozensus-Daten (siehe oben) als Korrelation/Regression (JASP und jamovi):
+
+<https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/afrozensus_data_2.sav>
+
+
+
 
