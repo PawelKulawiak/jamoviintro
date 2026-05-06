@@ -940,8 +940,8 @@ Borsboom, D., Deserno, M. K., Rhemtulla, M., Epskamp, S., Fried, E. I., McNally,
 
 - Korrelationsmatrix (alle Items)
 - Visualisieren Sie (Streudiagramm mit Regression) und verbalisieren Sie die Korrelation:
-  -A1: Am indifferent to the feelings of others
-  -O3: Carry the conversation to a higher level
+  - A1: Am indifferent to the feelings of others
+  - O3: Carry the conversation to a higher level
 - Korrelationsnetzwerk (alle Items)
 
 
