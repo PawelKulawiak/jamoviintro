@@ -136,6 +136,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#analyse-metrischerkontinuierlicher-daten-einstichproben-t-test" id="toc-analyse-metrischerkontinuierlicher-daten-einstichproben-t-test">Analyse metrischer/kontinuierlicher Daten (Einstichproben-t-Test)</a></li>
   <li><a href="#analyse-metrischerkontinuierlicher-daten-zweistichproben-t-test" id="toc-analyse-metrischerkontinuierlicher-daten-zweistichproben-t-test">Analyse metrischer/kontinuierlicher Daten (Zweistichproben-t-Test)</a></li>
   <li><a href="#korrelation-und-regression" id="toc-korrelation-und-regression">Korrelation und Regression</a></li>
+  <li><a href="#multiple-regression-mit-interaktionen" id="toc-multiple-regression-mit-interaktionen">Multiple Regression mit Interaktionen</a></li>
+  <li><a href="#korrelationsmatrix-und-korrelationsnetzwerk" id="toc-korrelationsmatrix-und-korrelationsnetzwerk">Korrelationsmatrix und Korrelationsnetzwerk</a></li>
   </ul></nav><style>
 #title-block-header.quarto-title-block.default .quarto-title::before {
   content: '';
@@ -1726,10 +1728,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Visualisierung mit jamovi</li>
 <li>Berechnung Korrelation und Regression (jamovi)</li>
 </ul>
+<hr>
 <p><strong>Übung</strong></p>
 <p>Analysieren und visualisieren Sie die Afrozensus-Daten (siehe oben) als Korrelation/Regression (JASP und jamovi):</p>
 <p><a href="https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/afrozensus_data_2.sav" class="uri">https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/afrozensus_data_2.sav</a></p>
-</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Wiederverwendung</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.de">CC BY-SA 4.0</a></div></div></section></div></main><!-- /main column --><script id="quarto-html-after-body" type="application/javascript">
+<hr></section><section id="multiple-regression-mit-interaktionen" class="level2"><h2 class="anchored" data-anchor-id="multiple-regression-mit-interaktionen">Multiple Regression mit Interaktionen</h2>
+<ul>
+<li>Gibt es einen Zusammenhang zwischen Anzahl der Freunde in der Schule und Gefühlen der Einsamkeit in der Schule?</li>
+<li>Ausreißer ausschließen</li>
+<li>Berücksichtigung von weiteren Variablen und Interaktionen</li>
+<li>Mit Flexplot (jamovi)</li>
+</ul>
+<p>Kovariablen:</p>
+<ul>
+<li>h_cognitive</li>
+<li>h_psycho</li>
+<li>female</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tipp</span>Daten
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Vyrastekova, J. (2021). Social inclusion of students with special educational needs assessed by the Inclusion of Other in the Self scale. PLOS ONE, 16(4), e0250070. <a href="https://doi.org/10.1371/journal.pone.0250070" class="uri">https://doi.org/10.1371/journal.pone.0250070</a></p>
+<p><strong>SPSS-Datensatz</strong>: <a href="https://doi.org/10.1371/journal.pone.0250070.s003" class="uri">https://doi.org/10.1371/journal.pone.0250070.s003</a></p>
+</div>
+</div>
+</section><section id="korrelationsmatrix-und-korrelationsnetzwerk" class="level2"><h2 class="anchored" data-anchor-id="korrelationsmatrix-und-korrelationsnetzwerk">Korrelationsmatrix und Korrelationsnetzwerk</h2>
+<p>Beispiel Korrelationsmatrix: <a href="https://pawelkulawiak.github.io/supplepi/EFA.html" class="uri">https://pawelkulawiak.github.io/supplepi/EFA.html</a></p>
+<p>Beispiel-Daten: <a href="https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/Set1.sav" class="uri">https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/Set1.sav</a></p>
+<p>Daten-Quelle:</p>
+<p>Fung, S., &amp; Fung, A. L. C. (2020). Development and evaluation of the psychometric properties of a brief parenting scale (PS-7) for the parents of adolescents. PLOS ONE, 15(1), e0228287. <a href="https://doi.org/10.1371/journal.pone.0228287" class="uri">https://doi.org/10.1371/journal.pone.0228287</a></p>
+<p>Korrelationsnetzwerke:</p>
+<p>Borsboom, D., Deserno, M. K., Rhemtulla, M., Epskamp, S., Fried, E. I., McNally, R. J., Robinaugh, D. J., Perugini, M., Dalege, J., Costantini, G., Isvoranu, A.-M., Wysocki, A. C., van Borkulo, C. D., van Bork, R., &amp; Waldorp, L. J. (2021). Network analysis of multivariate data in psychological science. Nature Reviews Methods Primers, 1(1). <a href="https://doi.org/10.1038/s43586-021-00055-w" class="uri">https://doi.org/10.1038/s43586-021-00055-w</a></p>
+<hr>
+<p><strong>Übung</strong></p>
+<p><a href="https://www.personality-project.org/r/html/bfi.html" class="uri">https://www.personality-project.org/r/html/bfi.html</a></p>
+<ul>
+<li>Korrelationsmatrix (alle Items)</li>
+<li>Visualisieren Sie (Streudiagramm mit Regression) und verbalisieren Sie die Korrelation: -A1: Am indifferent to the feelings of others -O3: Carry the conversation to a higher level</li>
+<li>Korrelationsnetzwerk (alle Items)</li>
+</ul></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Wiederverwendung</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.de">CC BY-SA 4.0</a></div></div></section></div></main><!-- /main column --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();

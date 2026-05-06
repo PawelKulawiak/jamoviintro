@@ -887,11 +887,66 @@ Wir arbeiten mit den Mann-Zeichen-Daten (siehe oben).
 - Visualisierung mit jamovi
 - Berechnung Korrelation und Regression (jamovi)
 
+---
+
 **Übung**
 
 Analysieren und visualisieren Sie die Afrozensus-Daten (siehe oben) als Korrelation/Regression (JASP und jamovi):
 
 <https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/afrozensus_data_2.sav>
+
+---
+
+## Multiple Regression mit Interaktionen
+
+- Gibt es einen Zusammenhang zwischen Anzahl der Freunde in der Schule und Gefühlen der Einsamkeit in der Schule?
+- Ausreißer ausschließen
+- Berücksichtigung von weiteren Variablen und Interaktionen
+- Mit Flexplot (jamovi)
+
+Kovariablen:
+
+- h_cognitive
+- h_psycho
+- female
+
+::: callout-tip
+## Daten
+Vyrastekova, J. (2021). Social inclusion of students with special educational needs assessed by the Inclusion of Other in the Self scale. PLOS ONE, 16(4), e0250070. <https://doi.org/10.1371/journal.pone.0250070>
+
+**SPSS-Datensatz**: <https://doi.org/10.1371/journal.pone.0250070.s003>
+:::
+
+
+## Korrelationsmatrix und Korrelationsnetzwerk
+
+Beispiel Korrelationsmatrix: <https://pawelkulawiak.github.io/supplepi/EFA.html>
+
+Beispiel-Daten: <https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/Set1.sav>
+
+Daten-Quelle:
+
+Fung, S., & Fung, A. L. C. (2020). Development and evaluation of the psychometric properties of a brief parenting scale (PS-7) for the parents of adolescents. PLOS ONE, 15(1), e0228287. <https://doi.org/10.1371/journal.pone.0228287>
+
+Korrelationsnetzwerke:
+
+Borsboom, D., Deserno, M. K., Rhemtulla, M., Epskamp, S., Fried, E. I., McNally, R. J., Robinaugh, D. J., Perugini, M., Dalege, J., Costantini, G., Isvoranu, A.-M., Wysocki, A. C., van Borkulo, C. D., van Bork, R., & Waldorp, L. J. (2021). Network analysis of multivariate data in psychological science. Nature Reviews Methods Primers, 1(1). <https://doi.org/10.1038/s43586-021-00055-w>
+
+---
+
+**Übung**
+
+<https://www.personality-project.org/r/html/bfi.html>
+
+- Korrelationsmatrix (alle Items)
+- Visualisieren Sie (Streudiagramm mit Regression) und verbalisieren Sie die Korrelation:
+  -A1: Am indifferent to the feelings of others
+  -O3: Carry the conversation to a higher level
+- Korrelationsnetzwerk (alle Items)
+
+
+
+
 
 
 
