@@ -944,6 +944,10 @@ Borsboom, D., Deserno, M. K., Rhemtulla, M., Epskamp, S., Fried, E. I., McNally,
   - O3: Carry the conversation to a higher level
 - Korrelationsnetzwerk (alle Items)
 
+## Multi-Level-Daten
+
+<https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/simulated_multi_level_data_ri.xlsx>
+
 
 
 
