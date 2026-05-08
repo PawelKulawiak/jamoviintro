@@ -874,13 +874,13 @@ Vyrastekova, J. (2021). Social inclusion of students with special educational ne
 
 ## Korrelation und Regression
 
+<https://pawelkulawiak.github.io/3in1/>
+
 Wir arbeiten mit den Mann-Zeichen-Daten (siehe oben).
 
 - Rain-Cloud-Plots mit JASP:
 
 ![](images/bivariat.png)
-
-<https://pawelkulawiak.github.io/3in1/>
 
 - Visualisierung mit Visual Modeling/Linear Modeling (JASP)
 - Berechnung Korrelation und Regression (JASP)
@@ -948,10 +948,21 @@ Borsboom, D., Deserno, M. K., Rhemtulla, M., Epskamp, S., Fried, E. I., McNally,
 
 <https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/simulated_multi_level_data_ri.xlsx>
 
+## Longitudinale Analyse
 
+![](images/time3.png)
 
+**Buch-Empfehlung**
 
+Twisk, J. W. R. (2021). Analysis of Data from Randomized Controlled Trials. Springer International Publishing. <https://doi.org/10.1007/978-3-030-81865-4>
 
+**Übungsdaten**
+
+<https://github.com/PawelKulawiak/jamoviintro/raw/refs/heads/main/BtheB.xlsx>
+
+<https://vincentarelbundock.github.io/Rdatasets/doc/HSAUR/BtheB.html>
+
+PROUDFOOT, J., GOLDBERG, D., MANN, A., EVERITT, B., MARKS, I., & GRAY, J. A. (2003). Computerized, interactive, multimedia cognitive-behavioural program for anxiety and depression in general practice. Psychological Medicine, 33(2), 217–227. <https://doi.org/10.1017/s0033291702007225>
 
 
 
